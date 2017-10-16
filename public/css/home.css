@@ -1,0 +1,12 @@
+.slider {
+  height: 100% !important;
+}
+
+.slides {
+  height: 825px !important;
+}
+
+.camera {
+  width: 100%;
+  postion: relative;
+}
