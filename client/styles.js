@@ -1,116 +1,61 @@
-const colors = {}
-colors.blue = '#0093D8'
-colors.red = '#D9534F'
-colors.white = 'white'
-colors.black = 'black'
-colors.transparent = 'rgba(0,0,0,0)'
-
 export default {
-  center: {
-    textAlign: 'center',
+  webcam: {
+    width: '100%',
   },
-  horizontal: {
-    flexDirection: 'row',
+  screenshot:{
+    width: '100%',
+    postion: 'relative'
   },
-  alignJustifyCenter: {
-    alignItems: 'center',
-    justifyContent: 'center',
+  zIndex0:{
+    zIndex: 0,
   },
-  alignItemsCenter: {
-    alignItems: 'center',
+  zIndex1:{
+    zIndex: 1
   },
-  flexEnd: {
-    justifyContent: 'flex-end',
+  colorMatchedDiv:{
+    border: '6px solid',
+    postion: 'absolute',
+    zIndex: 5,
+    WebkitTransition: 'all', // note the capital 'W' here
+    msTransition: 'all' // 'ms' is the only lowercase vendor prefix
   },
-  flexWrap: {
-    flexWrap: 'wrap',
+  positionRelative: {
+    postion: 'relative'
   },
-  redText: {
-    color: colors.red,
+  postionAbsolute: {
+    postion: 'absolute'
   },
-  whiteText: {
-    color: colors.white,
+  displayInline: {
+    diplay: 'inline'
   },
-  marginTop10: {
-    marginVertical: 10,
+  marginTop: {
+    marginTop: '40px'
   },
-  marginSide1: {
-    marginHorizontal: 1,
+  footer : {
+  backgroundColor: '#D4D3D6',
+  marginTop: '40 px',
+  textAlign: 'left',
+  color: 'white',
+  padding: '2.5%',
+  a: {
+    color: 'white',
+    borderBottom: '1px dotted white',
+    }
   },
-  marginSide5: {
-    marginHorizontal: 5,
+  productImage: {
+    height: '150px',
+    alignCenter: 'align-center'
   },
-  marginSide10: {
-    marginHorizontal: 10,
+  alignSelfEnd: {
+    alignSelfEnd: 'align self end'
   },
-  container: {
-    backgroundColor: 'white',
-    flex: 1,
+  productDivOutline: {
+    border: '1px #e5e5e5 solid',
+    padding: '20px',
+    margin: '20px',
   },
-  flex1: {
-    flex: 1,
-  },
-  border: {
-    borderBottomWidth: 1,
-    borderColor: 'black',
-  },
-  blueText: {
-    color: '#0093D8',
-  },
-  paddingVert15: {
-    paddingVertical: 15,
-  },
-  paddingVert10: {
-    paddingVertical: 10,
-  },
-  paddingVert5: {
-    paddingVertical: 5,
-  },
-  paddingSide10: {
-    paddingHorizontal: 10,
-  },
-  fullWidth: {
-    alignSelf: 'stretch',
-  },
-  backgroundWhite: {
-    backgroundColor: 'white',
-  },
-  backgroundBlack: {
-    backgroundColor: 'black',
-  },
-  backgroundBlue: {
-    backgroundColor: colors.blue,
-  },
-  justifySpaceBetween: {
-    justifyContent: 'space-between',
-  },
-  justifySpaceAround: {
-    justifyContent: 'space-around',
-  },
-  backgroundTransWhite: {
-    backgroundColor: 'rgba(255,255,255,.5)',
-  },
-  backgroundTransparent: {
-    backgroundColor: 'rgba(0,0,0,0)',
-  },
-  searchBar: {
-  },
-  navButton: {
-    height: 35,
-    width: 45,
-    textAlign: 'center',
-    paddingVertical: 5,
-  },
-  roundedRectangle: {
-    borderRadius: 15,
-    borderWidth: 1,
-    borderColor: '#0093D8',
-  },
-  navMargin: {
-    marginTop: 30,
-    marginBottom: 5,
-  },
-  maxWidth: {
-    maxWidth: 350
+  loginBox: {
+    border: '1px #e5e5e5 solid',
+    padding: '20px'
   }
 }

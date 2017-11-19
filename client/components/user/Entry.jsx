@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { Row, Input } from 'react-materialize';
 import { connect } from 'react-redux';
 import { auth } from '../../store/sessions';
+import styles from '../../styles';
 
 class Entry extends React.Component {
   constructor() {
@@ -34,56 +35,68 @@ class Entry extends React.Component {
 
   render() {
     return (
-      <div className="container login-container">
-        <div className="row">
-          <div className="left-text col s12 m12 l6">
-            <div className="lb-header">
-              <a href="#" className="active">
-                Login
-              </a>
-            </div>
-            <div className="social-login">
-              <a href="/auth/google">
-                <i className="fa fa-google-plus fa-lg" />
-                Log in with Google
-              </a>
-            </div>
+      <div className="container">
+    <div className="row">
+    	<div className="col-md-4 offset-md-1" style={styles.loginBox}>
+    		<div className="panel panel-default">
+			  	<div className="panel-heading">
+			    	<h4 className="panel-title">Login</h4>
+			 	</div>
+         <hr/>
+			  	<div className="panel-body">
+			    	<form accept-charset="UTF-8" role="form" onSubmit={this.handleLoginSubmit}>
+                    <fieldset>
+			    	  	<div className="form-group">
+			    		    <input className="form-control" placeholder="mail@example.com" name="email" type="text" />
+			    		</div>
+			    		<div className="form-group">
+			    			<input className="form-control" placeholder="Password" name="password" type="password" />
+			    		</div>
+			    		<div className="checkbox">
+			    	    	<label>
+			    	    		<input name="remember" type="checkbox" value="Remember Me" /> Remember Me
+			    	    	</label>
+			    	    </div>
+			    		<input  className="btn btn-md btn-success" type="submit" value="Login" />
+			    	</fieldset>
+			      	</form>
+                      <hr/>
+                    <center><h4>Or</h4></center>
+                    <input className="btn btn-md" type="submit" value="Login via facebook" />
+			    </div>
+			</div>
+		</div>
 
-            <form className="email-login" onSubmit={this.handleLoginSubmit}>
-              <div className="u-form-group">
-                <input name="email" type="email" placeholder="Email" />
-              </div>
-              <div className="u-form-group">
-                <input name="password" type="password" placeholder="Password" />
-              </div>
-              <div className="u-form-group">
-                <button type="submit">Log in</button>
-              </div>
-            </form>
-          </div>
-          <div className="right-text col s12 m12 l6">
-            <div className="lb-header">
-              <a href="#" id="signup-box-link">
-                Sign Up
-              </a>
+    <div className="col-md-4 offset-md-1" style={styles.loginBox}>
+    		<div className="panel panel-default">
+			  	<div className="panel-heading">
+			    	<h4 className="panel-title">Signup</h4>
+			 	</div>
+         <hr/>
+			  	<div className="panel-body">
+			    	<form accept-charset="UTF-8" role="form" onSubmit={this.handleSignUpSubmit}>
+                    <fieldset>
+			    	  	<div className="form-group">
+			    		    <input className="form-control" placeholder="mail@example.com" name="email" type="text" />
+			    		</div>
+			    		<div className="form-group">
+			    			<input className="form-control" placeholder="Password" name="password" type="password" />
+			    		</div>
+              <div className="form-group">
+              <input className="form-control" placeholder="Re-type Password" name="confirmPassword" type="password" />
             </div>
-            <form className="email-signup" onSubmit={this.handleSignUpSubmit}>
-              <div className="u-form-group">
-                <input name="email" type="email" placeholder="Email" />
-              </div>
-              <div className="u-form-group">
-                <input name="password" type="password" placeholder="Password" />
-              </div>
-              <div className="u-form-group">
-                <input name="confirmPass" type="password" placeholder="Confirm Password" />
-              </div>
-              <div className="u-form-group">
-                <button>Sign Up</button>
-              </div>
-            </form>
-          </div>
-        </div>
-      </div>
+			    		<input  className="btn btn-md btn-success" type="submit" value="Signup" />
+			    	</fieldset>
+			      	</form>
+                      <hr/>
+                    <center><h4>Or</h4></center>
+                    <input className="btn btn-md" type="submit" value="Signup via facebook" />
+			    </div>
+			</div>
+		</div>
+
+	</div>
+</div>
     );
   }
 }

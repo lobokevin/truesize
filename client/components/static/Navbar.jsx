@@ -25,12 +25,16 @@ class Navbar extends React.Component {
   }
 
   renderLoginSignup() {
-    return (<Button bsStyle="info" href="/entry">Login/Signup</Button>)
+    return (<li className="nav-item">
+    <a className="nav-link" href="/entry">Login/Signup</a>
+  </li>)
   }
 
   renderLogout() {
     const email = this.props.sessions.email;
-    return (<Button bsStyle="info" onClick={this.logout}>Logout</Button>)
+    return (<li className="nav-item">
+    <a className="nav-link" href="/entry" onClick={this.logout}>Logout</a>
+  </li>)
   }
 
   logout() {
@@ -42,24 +46,39 @@ class Navbar extends React.Component {
 
   render() {
      return (
-         <Grid>
-        <Row className="show-grid">
-          <Col xs={6} lg={6}>
-            <PageHeader>True Size</PageHeader>
-          </Col>
-           <Col xs={6} lg={6} bsClass="margin-top: 100">
-            <ButtonGroup>
-              <Button bsStyle="info" href="/">Home</Button>
-              <Button bsStyle="info" href="/dashboard">My Profile</Button>
-              <Button bsStyle="info" href="/products">Products</Button>
-              <Button bsStyle="info" href="/checkout">Checkout</Button>
+         <div className="container" style={style.marginTop}>
+        <div className="row align-items-end">
+
+          <div className="col-6">
+            <h1>True Size</h1>
+          </div>
+           <div className="col-6">
+           <nav className="navbar">
+
+           <ul className="nav navbar-default">
+       <li className="nav-item ">
+    <a className="nav-link" href="/">Home</a>
+  </li>
+  <li className="nav-item">
+    <a className="nav-link" href="/products">Products</a>
+  </li>
+  <li className="nav-item">
+    <a className="nav-link" href="/dashboard">Dashboard</a>
+  </li>
+  <li className="nav-item">
+    <a className="nav-link" href="/checkout">Checkout</a>
+  </li>
                 {this.props.sessions.email
                   ? this.renderLogout()
                   : this.renderLoginSignup()}
-            </ButtonGroup>
-          </Col>
-        </Row>
-      </Grid>
+                  </ul>
+                  </nav>
+          </div>
+
+        </div>
+        <hr/>
+      </div>
+
     )
   }
 }

@@ -16,12 +16,12 @@ class ProductList extends Component {
         <ul className="collection container productList">
              {products.map(product => <ProductListItem product={product} key={product.id}/>)}
         </ul>
-    )
+    );
    }
  }
- 
+
  /* -----------------    CONTAINER     ------------------ */
- 
+
  const mapState = ({ products }) => ({ products });
  const mapDispatch = { };
  export default connect(mapState, mapDispatch)(ProductList);

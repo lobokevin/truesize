@@ -10,6 +10,10 @@ const Product = db.define('product', {
     type: Sequelize.TEXT,
     allowNull: false
   },
+  size: {
+    type: Sequelize.ENUM('S', 'M', 'L', 'XL'),
+    defaultValue: 'M'
+  },
   inventoryQuantity: {
     type: Sequelize.INTEGER,
     allowNull: false
@@ -23,7 +27,7 @@ const Product = db.define('product', {
   },
   image: {
     type: Sequelize.STRING,
-    defaultValue: 'http://www.siyawoman.com/wp-content/uploads/2015/09/product.png'
+    defaultValue: 'http://suitsandmoregh.com/wp-content/uploads/2016/12/wNDuXqrQOs_yosemite_shirt_0_original.jpg'
   }
 });
 

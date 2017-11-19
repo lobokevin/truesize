@@ -5,6 +5,7 @@ const Order = require('./server/db/models/order');
 const Purchase = require('./server/db/models/purchase');
 const Review = require('./server/db/models/review');
 const ShippingAddress = require('./server/db/models/shippingAddress');
+const axios = require('axios');
 
 const users = [
   {
@@ -16,8 +17,8 @@ const users = [
   },
   {
     fullName: 'Kevin',
-    email: 'kevin@ladiesoffullstack.com',
-    password: '123',
+    email: 'kevin@k.com',
+    password: 'pass',
     billingAddress: '567 Maple St. Chicago, IL 60657',
     permissions: 'authenticated'
   }
@@ -25,25 +26,36 @@ const users = [
 
 const products = [
   {
-    title: 'Voss',
-    description: 'Unbelievable taste. 2L',
+    title: 'Uniqlo Broadcloth Shirt',
+    description: 'Limited Edition Flannel',
     inventoryQuantity: 500,
-    price: 13.99,
-    category: 'water'
+    price: 29.99,
+    size: 'M',
+    category: 'shirt'
   },
   {
-    title: 'Fiji',
-    description: 'Bottled at the source. 1L',
+    title: 'Land\'s End Flannel Shirt',
+    description: 'Made in India',
     inventoryQuantity: 100,
-    price: 25.99,
-    category: 'water'
+    price: 48.99,
+    size: 'L',
+    category: 'shirt'
   },
   {
-    title: 'Diamond',
-    description: 'Made with real diamonds. 1mL.',
+    title: 'Levi\'s Rugged Wear',
+    description: 'Original Levi\'s craftmenship, since 1858',
     inventoryQuantity: 100,
     price: 99.99,
-    category: 'water'
+    size: 'S',
+    category: 'shirt'
+  },
+  {
+    title: 'AEO',
+    description: 'American Eagle Outfitters',
+    inventoryQuantity: 100,
+    price: 45.99,
+    size: 'M',
+    category: 'shirt'
   }
 ];
 

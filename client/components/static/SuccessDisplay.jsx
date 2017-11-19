@@ -1,0 +1,31 @@
+import React from 'react';
+import { connect } from 'react-redux';
+import { registerSize } from '../../store/products';
+import styles from '../../styles.js'
+
+class SuccessDisplay extends React.Component{
+
+  constructor(props){
+    super(props);
+  }
+
+  componentDidMount(){
+    this.registerSize(this.props.size);
+  }
+
+  render(){
+    return(
+    <div><hr/><div className="alert alert-primary" role="alert">
+  We have your measurements! <a href="/products" className="alert-link">Click here</a> or head over to the products page to view shirts which would fit you perfectly!
+  <p>Unhappy with the photograph you just took? You could try it again!</p>
+</div>
+</div>);
+  }
+}
+
+/* -----------------    CONTAINER     ------------------ */
+
+const mapState = null;
+const mapDispatch = { registerSize };
+export default connect(mapState, mapDispatch)(SuccessDisplay);
+

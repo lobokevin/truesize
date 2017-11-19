@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { addToCart } from '../../store/cart';
 import { connect } from 'react-redux';
+import styles from '../../styles';
+
 
 class ProductListItem extends Component {
   constructor(props) {
@@ -14,26 +16,25 @@ class ProductListItem extends Component {
 	}
 
 	render() {
-		const product = this.props.product
+		const product = this.props.product;
 		return (
-			<li className="collection-item product-li">
-				<div className="row product-row">
-					<div className="col s4 m2 l4">
-						<img className="product-image" src={product.image}/>
+				<div className="row" style={styles.productDivOutline}>
+					<div className="col-3">
+						<img className="product-image" src={product.image} style={styles.productImage}/>
 					</div>
-					<div className="col s1 m4 l2"> </div>
-					<div className="col s3 m4 l4">
+					<div className="col-3"> <h4>Size : {product.size} </h4>
+					<h4>Price : ${product.price} </h4></div>
+					<div className="col-4">
 						<p>
 							<Link to={`/products/${product.id}`}>{product.title}</Link>
 							<br/>
 							{product.description}
 						</p>
 					</div>
-					<div className="col s4 m2 l2 addProductBtn">
-						<a className="btn-floating btn-large waves-effect waves-light blue darken-2"><i className="material-icons" onClick={this.handleAdd}>add</i></a>
+					<div className="col-2">
+						<button type="button" className="btn btn-primary btn-sm" onClick={this.handleAdd}>+</button>
 					</div>
 				</div>
-			</li>
 		)
 	}
 }

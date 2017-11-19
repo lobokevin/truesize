@@ -2,6 +2,10 @@ import React from 'react';
 import {Link} from 'react-router-dom';
 import Webcam from 'react-webcam';
 import Dropzone from 'react-dropzone';
+import ColorMatchedDiv from './ColorMatchDiv';
+import HomeInfo from './HomeInfo';
+import SuccessDisplay from './SuccessDisplay';
+
 import {
   PageHeader,
   Grid,
@@ -10,6 +14,7 @@ import {
   Button,
   Well
 } from 'react-bootstrap';
+import tracking from 'tracking';
 import styles from '../../styles.js'
 
 class Home extends React.Component {
@@ -18,54 +23,121 @@ class Home extends React.Component {
     super(props);
     this.state = {
       screenshot: null,
-      tab: 0,
-      files: null
+      files: null,
+      colorMatched: false,
+      x: 0,
+      y: 0,
+      width: 0,
+      height: 0,
+      color: '#FF0000'
     };
+
+    this.handleClick = this.handleClick.bind(this);
+    this.handleProcess = this.handleProcess.bind(this);
+    this.processSampleImage = this.processSampleImage.bind(this);
   }
 
-  handleClick = () => {
-    const screenshot = this.webcam.getScreenshot();
-    this.setState({screenshot});
+  componentDidMount() {
+    let img = this.img;
+    let canvas = this.canvas;
+  }
+
+  handleClick() {
+    const capture = this.webcam.getScreenshot();
+    this.setState({screenshot: capture});
+  }
+
+  handleProcess() {
+    let img = this.img;
+
+    window.tracking.ColorTracker.registerColor('black', function(r, g, b) {
+      if (r == 0 && g == 0 && b == 0) {
+        return true;
+      }
+      return false;
+    });
+
+    let tracker = new window.tracking.ColorTracker(['magenta', 'cyan', 'yellow', 'black']);
+
+    let obj = {
+      colorMatchedStatus: false,
+      x: 0,
+      y: 0,
+      width: 0,
+      height: 0,
+      color: "red"
+    }
+
+    tracker.on('track', (event) =>  {
+
+      event.data.forEach(function(rect) {
+
+        obj = {
+          color: rect.color,
+          colorMatchedStatus: true,
+          x : rect.x,
+          y: rect.y,
+          width: rect.width,
+          height: rect.height
+        }
+
+      })
+
+      this.setState({colorMatched : obj.colorMatchedStatus});
+    });
+
+    window.tracking.track(img, tracker);
   }
 
   onDrop(files) {
-
     let reader = new FileReader();
     let file = files[0];
-
     reader.onloadend = () => {
       this.setState({files: file, screenshot: reader.result});
     }
-
     reader.readAsDataURL(file)
+  }
+
+  processSampleImage(){
+    this.setState({screenshot: "https://preview.ibb.co/h375xm/autumn_goodman_242810_min.jpg"})
+    console.log("state", this.state);
+  }
+
+  renderSampleImage(){
+  return(<div><h3>hi</h3><img onClick={this.processSampleImage} height={350} src="https://preview.ibb.co/h375xm/autumn_goodman_242810_min.jpg" /></div>);
   }
 
   render() {
     return (
-      <Grid>
-        <Well>
-
-          <Row className="show-grid">
-            <Col xs={6} md={6} lg={6}>
-              <Webcam width={350} height={350} screenshotFormat="image/jpeg" audio={false} ref={node => this.webcam = node}/>
-              <Button bsStyle="info" onClick={this.handleClick}>Capture</Button>
-            </Col>
-            <Col xs={6} md={6} lg={6}>
-              <Dropzone onDrop={this.onDrop.bind(this)}>
-                <h3>Screenshot</h3>
+      <div className="container">
+          <div className="row">
+            <div className="col-6">
+              <Webcam style={styles.webcam} screenshotFormat="image/jpeg" audio={false} ref={node => this.webcam = node}/>
+              <button type="button" className="btn btn-primary" onClick={this.handleClick}>Capture</button>
+            </div>
+            <div className="col-6" style={styles.positionRelative}>
+              <Dropzone  onDrop={this.onDrop.bind(this)}>
                 {this.state.screenshot
-                  ? <img style={styles.maxWidth} src={this.state.screenshot}/>
+                  ? <div>
+                    <img ref={(img) => { this.img = img;}} src={this.state.screenshot} height={400} style={styles.positionRelative}/>
+                    </div>
                   : null}
               </Dropzone>
-            </Col>
-          </Row>
-        </Well>
-        <Row className="show-grid">
-          <Col xs={4} md={4} lg={4}></Col>
-        </Row>
-      </Grid>
+              {this.state.screenshot ? null:
+              this.renderSampleImage()}
+              {this.state.colorMatched ?
+                  <ColorMatchedDiv/> : null}
+              {this.state.screenshot?
+               <button type="button" className="btn btn-primary"  onClick={this.handleProcess}>Process</button>
+               : null}
+            </div>
+          </div>
+
+          {this.state.colorMatched ? <SuccessDisplay size={'M'}/> : null}
+        </div>
     );
   }
+
 }
 
 export default Home;
