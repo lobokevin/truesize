@@ -99,12 +99,12 @@ class Home extends React.Component {
   }
 
   processSampleImage(){
-    this.setState({screenshot: "https://preview.ibb.co/h375xm/autumn_goodman_242810_min.jpg"})
+    this.setState({screenshot: "http://i66.tinypic.com/2ec2csz.png"})
     console.log("state", this.state);
   }
 
   renderSampleImage(){
-  return(<div><h3>hi</h3><img onClick={this.processSampleImage} height={350} src="https://preview.ibb.co/h375xm/autumn_goodman_242810_min.jpg" /></div>);
+  return(<div><p>Click here, or simply drop an image here if you already have an image of yourself. Else use the sample image given below!</p><img onClick={this.processSampleImage} width={"80%"} height="400" src="http://i66.tinypic.com/2ec2csz.png" /></div>);
   }
 
   render() {
@@ -116,19 +116,19 @@ class Home extends React.Component {
               <button type="button" className="btn btn-primary" onClick={this.handleClick}>Capture</button>
             </div>
             <div className="col-6" style={styles.positionRelative}>
-              <Dropzone  onDrop={this.onDrop.bind(this)}>
+              <Dropzone  style={styles.dropzone} onDrop={this.onDrop.bind(this)}>
                 {this.state.screenshot
                   ? <div>
-                    <img ref={(img) => { this.img = img;}} src={this.state.screenshot} height={400} style={styles.positionRelative}/>
+                    <img ref={(img) => { this.img = img;}} src={this.state.screenshot} style={styles.screenshotDiplay}/>
                     </div>
                   : null}
-              </Dropzone>
-              {this.state.screenshot ? null:
+                  {this.state.screenshot ? null:
               this.renderSampleImage()}
+              </Dropzone>
               {this.state.colorMatched ?
                   <ColorMatchedDiv/> : null}
               {this.state.screenshot?
-               <button type="button" className="btn btn-primary"  onClick={this.handleProcess}>Process</button>
+               <button style={styles.marginTop10} type="button" className="btn btn-primary"  onClick={this.handleProcess}>Process</button>
                : null}
             </div>
           </div>

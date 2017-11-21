@@ -1,6 +1,7 @@
 export default {
   webcam: {
     width: '100%',
+    border: '1px #e5e5e5 solid'
   },
   screenshot:{
     width: '100%',
@@ -20,7 +21,8 @@ export default {
     msTransition: 'all' // 'ms' is the only lowercase vendor prefix
   },
   positionRelative: {
-    postion: 'relative'
+    postion: 'relative',
+    display: 'column'
   },
   postionAbsolute: {
     postion: 'absolute'
@@ -57,5 +59,17 @@ export default {
   loginBox: {
     border: '1px #e5e5e5 solid',
     padding: '20px'
+  },
+  dropzone:{
+    height: '480px',
+    border: '1px #e5e5e5 solid'
+  },
+  screenshotDiplay:{
+    marginTop: '35px',
+    width: '350px',
+    height: '400px'
+  },
+  marginTop10:{
+    marginTop: '5px'
   }
 }
