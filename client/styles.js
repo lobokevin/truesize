@@ -1,10 +1,11 @@
 export default {
   webcam: {
     width: '100%',
+    border: '1px #e5e5e5 solid'
   },
   screenshot:{
     width: '100%',
-    postion: 'relative'
+    position: 'relative'
   },
   zIndex0:{
     zIndex: 0,
@@ -13,17 +14,18 @@ export default {
     zIndex: 1
   },
   colorMatchedDiv:{
-    border: '6px solid',
-    postion: 'absolute',
+    border: '2px solid yellow',
+    position: 'absolute',
     zIndex: 5,
     WebkitTransition: 'all', // note the capital 'W' here
     msTransition: 'all' // 'ms' is the only lowercase vendor prefix
   },
   positionRelative: {
-    postion: 'relative'
+    position: 'relative',
+    display: 'column'
   },
-  postionAbsolute: {
-    postion: 'absolute'
+  positionAbsolute: {
+    position: 'absolute'
   },
   displayInline: {
     diplay: 'inline'
@@ -57,5 +59,19 @@ export default {
   loginBox: {
     border: '1px #e5e5e5 solid',
     padding: '20px'
+  },
+  dropzone:{
+    height: '480px',
+    border: '1px #e5e5e5 solid',
+    position: 'relative'
+  },
+  screenshotDiplay:{
+    marginTop: '35px',
+    width: '350px',
+    height: '400px',
+    position: 'relative'
+  },
+  marginTop10:{
+    marginTop: '5px'
   }
 }
