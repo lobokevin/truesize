@@ -13,7 +13,7 @@
     "test": "DATABASE_URL='postgres://localhost:5432/truesize-test' mocha ./**/*.spec.js --compilers js:babel-register",
     "seed": "node seed.js"
   },
-  "author": "",
+  "author": "Kevin Lobo",
   "license": "ISC",
   "dependencies": {
     "axios": "^0.15.3",
