@@ -5,8 +5,3 @@
 .slides {
   height: 825px !important;
 }
-
-.camera {
-  width: 100%;
-  postion: relative;
-}

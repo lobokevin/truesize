@@ -51,7 +51,7 @@ class Home extends React.Component {
     let img = this.img;
 
     window.tracking.ColorTracker.registerColor('black', function(r, g, b) {
-      if (r == 0 && g == 0 && b == 0) {
+      if (r < 10 && g < 5 && b < 5) {
         return true;
       }
       return false;
@@ -100,7 +100,6 @@ class Home extends React.Component {
 
   processSampleImage(){
     this.setState({screenshot: "http://i66.tinypic.com/2ec2csz.png"})
-    console.log("state", this.state);
   }
 
   renderSampleImage(){
@@ -118,22 +117,22 @@ class Home extends React.Component {
             <div className="col-6" style={styles.positionRelative}>
               <Dropzone  style={styles.dropzone} onDrop={this.onDrop.bind(this)}>
                 {this.state.screenshot
-                  ? <div>
+                  ? <div style={styles.positionRelative}>
                     <img ref={(img) => { this.img = img;}} src={this.state.screenshot} style={styles.screenshotDiplay}/>
+                    {this.state.colorMatched ?
+                  <ColorMatchedDiv /> : null}
                     </div>
                   : null}
                   {this.state.screenshot ? null:
               this.renderSampleImage()}
               </Dropzone>
-              {this.state.colorMatched ?
-                  <ColorMatchedDiv/> : null}
               {this.state.screenshot?
                <button style={styles.marginTop10} type="button" className="btn btn-primary"  onClick={this.handleProcess}>Process</button>
                : null}
             </div>
           </div>
 
-          {this.state.colorMatched ? <SuccessDisplay size={'M'}/> : null}
+          {this.state.colorMatched ? <SuccessDisplay size="M" /> : null}
         </div>
     );
   }

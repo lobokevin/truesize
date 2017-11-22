@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { registerSize } from '../../store/products';
+import { updateSizeThunk } from '../../store/products';
 import styles from '../../styles.js'
 
 class SuccessDisplay extends React.Component{
@@ -10,7 +10,7 @@ class SuccessDisplay extends React.Component{
   }
 
   componentDidMount(){
-    this.registerSize(this.props.size);
+    this.props.updateSizeThunk(this.props.size);
   }
 
   render(){
@@ -26,6 +26,6 @@ class SuccessDisplay extends React.Component{
 /* -----------------    CONTAINER     ------------------ */
 
 const mapState = null;
-const mapDispatch = { registerSize };
+const mapDispatch = { updateSizeThunk };
 export default connect(mapState, mapDispatch)(SuccessDisplay);
 

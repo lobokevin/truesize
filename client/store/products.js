@@ -5,6 +5,7 @@ const INITIALIZE = 'INITIALIZE_PRODUCTS';
 const CREATE = 'CREATE_PRODUCT';
 export const REMOVE = 'REMOVE_PRODUCT';
 const UPDATE = 'UPDATE_PRODUCT';
+const UPDATE_SIZE = 'UPDATE_SIZE';
 
 /* ------------   ACTION CREATORS     ------------------ */
 
@@ -12,6 +13,7 @@ const init = products => ({ type: INITIALIZE, products });
 const create = product => ({ type: CREATE, product });
 const remove = id => ({ type: REMOVE, id });
 const update = product => ({ type: UPDATE, product });
+const updateSize = size => ({type: UPDATE_SIZE, size});
 
 /* ------------       REDUCER     ------------------ */
 
@@ -22,12 +24,15 @@ export default function reducer(products = [], action) {
     case CREATE:
       return [action.product, ...products];
     case REMOVE:
-      return products.filter(product => product.id !== action.id); // nice! very clean
+      return products.filter(product => product.id !== action.id);
     case UPDATE:
       return products.map(
         product =>
-          action.product.id === product.id ? action.product : product // nice! very clean
+          action.product.id === product.id ? action.product : product
       );
+
+      case UPDATE_SIZE:
+      return products.filter( product => product.size === action.size);
     default:
       return products;
   }
@@ -40,6 +45,10 @@ export const fetchProducts = () => dispatch => {
     .get('/api/products')
     .then(res => dispatch(init(res.data)))
     .catch(err => console.error('Error fetching products', err));
+};
+
+export const updateSizeThunk = (size) => dispatch => {
+  dispatch(updateSize(size));
 };
 
 export const removeProduct = id => dispatch => {
