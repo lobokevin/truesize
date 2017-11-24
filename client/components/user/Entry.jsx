@@ -44,7 +44,7 @@ class Entry extends React.Component {
 			 	</div>
          <hr/>
 			  	<div className="panel-body">
-			    	<form accept-charset="UTF-8" role="form" onSubmit={this.handleLoginSubmit}>
+			    	<form acceptCharset="UTF-8" role="form" onSubmit={this.handleLoginSubmit}>
                     <fieldset>
 			    	  	<div className="form-group">
 			    		    <input className="form-control" placeholder="mail@example.com" name="email" type="text" />
@@ -74,7 +74,7 @@ class Entry extends React.Component {
 			 	</div>
          <hr/>
 			  	<div className="panel-body">
-			    	<form accept-charset="UTF-8" role="form" onSubmit={this.handleSignUpSubmit}>
+			    	<form acceptCharset="UTF-8" role="form" onSubmit={this.handleSignUpSubmit}>
                     <fieldset>
 			    	  	<div className="form-group">
 			    		    <input className="form-control" placeholder="mail@example.com" name="email" type="text" />

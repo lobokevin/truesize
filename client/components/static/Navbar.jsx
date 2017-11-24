@@ -26,14 +26,14 @@ class Navbar extends React.Component {
 
   renderLoginSignup() {
     return (<li className="nav-item">
-    <a className="nav-link" href="/entry">Login/Signup</a>
+    <NavLink className="nav-link" to="/entry">Login/Signup</NavLink>
   </li>)
   }
 
   renderLogout() {
     const email = this.props.sessions.email;
     return (<li className="nav-item">
-    <a className="nav-link" href="/entry" onClick={this.logout}>Logout</a>
+    <NavLink className="nav-link" to="/entry" onClick={this.logout}>Logout</NavLink>
   </li>)
   }
 
@@ -57,16 +57,16 @@ class Navbar extends React.Component {
 
            <ul className="nav navbar-default">
        <li className="nav-item ">
-    <a className="nav-link" href="/">Home</a>
+       <NavLink className="nav-link" to="/">Home</NavLink>
+      </li>
+  <li className="nav-item">
+  <NavLink className="nav-link" to="/products">Products</NavLink>
   </li>
   <li className="nav-item">
-    <a className="nav-link" href="/products">Products</a>
+  <NavLink className="nav-link" to="/dashboard">Dashboard</NavLink>
   </li>
   <li className="nav-item">
-    <a className="nav-link" href="/dashboard">Dashboard</a>
-  </li>
-  <li className="nav-item">
-    <a className="nav-link" href="/checkout">Checkout</a>
+  <NavLink className="nav-link" to="/checkout">Checkout</NavLink>
   </li>
                 {this.props.sessions.email
                   ? this.renderLogout()
