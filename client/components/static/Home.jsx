@@ -41,8 +41,6 @@ class Home extends React.Component {
   componentDidMount() {
     let img = this.img;
     let canvas = this.canvas;
-    console.log('tracking', tracking);
-    console.log('window tracking', window.tracking);
   }
 
   handleClick() {
@@ -60,7 +58,7 @@ class Home extends React.Component {
       return false;
     });
 
-    let tracker = new window.tracking.ColorTracker(['magenta', 'cyan', 'yellow']);
+    let tracker = new window.tracking.ColorTracker(['magenta', 'cyan', 'yellow', 'black']);
 
     let obj = {
       colorMatchedStatus: false,
