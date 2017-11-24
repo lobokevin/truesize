@@ -2,10 +2,11 @@ import React from 'react';
 import {Link} from 'react-router-dom';
 import Webcam from 'react-webcam';
 import Dropzone from 'react-dropzone';
-import tracking from '../../../node_modules/tracking/src/tracking.js';
+import tracking from 'tracking';
 import ColorMatchedDiv from './ColorMatchDiv';
 import HomeInfo from './HomeInfo';
 import SuccessDisplay from './SuccessDisplay';
+import ProductList from '../product/ProductList';
 
 import {
   PageHeader,
@@ -40,6 +41,8 @@ class Home extends React.Component {
   componentDidMount() {
     let img = this.img;
     let canvas = this.canvas;
+    console.log('tracking', tracking);
+    console.log('window tracking', window.tracking);
   }
 
   handleClick() {
@@ -50,16 +53,14 @@ class Home extends React.Component {
   handleProcess() {
     let img = this.img;
 
-    console.log('tracking', tracking);
-
-    tracking.ColorTracker.registerColor('black', function(r, g, b) {
+    window.tracking.ColorTracker.registerColor('black', function(r, g, b) {
       if (r < 10 && g < 5 && b < 5) {
         return true;
       }
       return false;
     });
 
-    let tracker = new tracking.ColorTracker(['magenta', 'cyan', 'yellow', 'black']);
+    let tracker = new window.tracking.ColorTracker(['magenta', 'cyan', 'yellow']);
 
     let obj = {
       colorMatchedStatus: false,
@@ -88,7 +89,7 @@ class Home extends React.Component {
       this.setState({colorMatched : obj.colorMatchedStatus});
     });
 
-    tracking.track(img, tracker);
+    window.tracking.track(img, tracker);
   }
 
   onDrop(files) {
