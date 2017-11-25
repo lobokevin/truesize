@@ -49,8 +49,8 @@ class Navbar extends React.Component {
          <div className="container" style={style.marginTop}>
         <div className="row align-items-end">
 
-          <div className="col-6">
-            <NavLink to="/"><h1>True Size</h1></NavLink>
+          <div className="col-6 align-items-end">
+            <NavLink to="/"><h2 style={style.displayInline}>True Size</h2 ><img src="/images/logo.png" style={style.navbarLogo}/></NavLink>
           </div>
            <div className="col-6">
            <nav className="navbar">
