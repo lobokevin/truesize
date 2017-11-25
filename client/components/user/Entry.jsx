@@ -62,7 +62,10 @@ class Entry extends React.Component {
 			      	</form>
                       <hr/>
                     <center><h4>Or</h4></center>
-                    <input className="btn btn-md" type="submit" value="Login via facebook" />
+                    <a href="/auth/google">
+                <i className="fa fa-google-plus fa-lg" />
+                Log in with Google
+              </a>
 			    </div>
 			</div>
 		</div>
