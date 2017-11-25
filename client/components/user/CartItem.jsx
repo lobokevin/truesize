@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { addToCart, removeFromCart } from '../../store/cart';
 import { connect } from 'react-redux';
+import styles from '../../styles';
 
 class CartItem extends Component {
     constructor(props) {
@@ -22,33 +23,30 @@ class CartItem extends Component {
     render() {
 	    const product = this.props.product;
 	    return (
-            <li className="collection-item product-li">
-				<div className="row product-row">
-					<div className="col s4 m2 l4"> 
-						<img className="product-image" src={product.image}/>
+				<div className="row" style={styles.productDivOutline}>
+					<div className="col-4">
+						<img className="product-image" src={product.image} style={styles.productImage}/>
 					</div>
-					<div className="col s1 m4 l2"> </div>
-					<div className="col s3 m4 l4"> 
+					<div className="col-4">
 						<p>
 							<Link to={`/products/${product.id}`}>{product.title}</Link>
 							<br/>
 							{product.description}
 						</p>
 					</div>
-					<div className="col s4 m2 l2">
-                        <a className="waves-effect waves-light btn cartButton" onClick={this.handleAdd}>+</a>
-                        <br /><br/>
-                        <a className="waves-effect waves-light btn cartButton" onClick={this.handleRemove}>-</a>
-                        <br />
-                        <p className="p-quantity">Q: {product.quantity}, Price: ${(product.quantity * product.price).toFixed(2)}</p>
+					<div className="col-4">
+                    <button type="button" className="btn btn-primary btn-sm" onClick={this.handleAdd} style={styles.buttonBorder}>+</button>
+						<button type="button" className="btn btn-primary btn-sm" onClick={this.handleRemove} style={styles.buttonBorder}>-</button>
+
+                        <p>Quantity: {product.quantity}, Price: ${(product.quantity * product.price).toFixed(2)}</p>
 					</div>
 				</div>
-			</li>)
+)
     }
 }
 
  /* -----------------    CONTAINER     ------------------ */
- 
+
  const mapState = null
  const mapDispatch = { addToCart, removeFromCart}
  export default connect(mapState, mapDispatch)(CartItem);

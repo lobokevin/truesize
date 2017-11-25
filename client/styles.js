@@ -34,7 +34,7 @@ export default {
     marginTop: '40px'
   },
   footer : {
-  backgroundColor: '#D4D3D6',
+  backgroundColor: '#2e393c',
   marginTop: '40 px',
   textAlign: 'left',
   color: 'white',
@@ -61,9 +61,6 @@ export default {
     padding: '20px'
   },
   dropzone:{
-    height: '480px',
-    border: '1px #e5e5e5 solid',
-    position: 'relative'
   },
   screenshotDiplay:{
     marginTop: '35px',
@@ -71,7 +68,21 @@ export default {
     height: '400px',
     position: 'relative'
   },
-  marginTop10:{
+  marginTop5:{
     marginTop: '5px'
+  },
+  homeInfo: {
+    border: '1px #e5e5e5 solid'
+  },
+  success: {
+    border: '1px #e5e5e5 solid',
+    marginTop: '25px'
+  },
+  divOutline: {
+    border: '1px #e5e5e5 solid',
+  },
+  buttonBorder: {
+    padding: '15px',
+    margin: '15px',
   }
 }

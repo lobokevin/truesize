@@ -83,7 +83,7 @@ class Entry extends React.Component {
 			    			<input className="form-control" placeholder="Password" name="password" type="password" />
 			    		</div>
               <div className="form-group">
-              <input className="form-control" placeholder="Re-type Password" name="confirmPassword" type="password" />
+              <input className="form-control" placeholder="Re-type Password" name="confirmPass" type="password" />
             </div>
 			    		<input  className="btn btn-md btn-success" type="submit" value="Signup" />
 			    	</fieldset>

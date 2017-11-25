@@ -15,11 +15,11 @@ class SuccessDisplay extends React.Component{
 
   render(){
     return(
-    <div><hr/><div className="alert alert-primary" role="alert">
+    <div className="alert alert-primary" role="alert" style={styles.success}>
   We have your measurements! <a href="/products" className="alert-link">Click here</a> or head over to the products page to view shirts which would fit you perfectly!
   <p>Unhappy with the photograph you just took? You could try it again!</p>
 </div>
-</div>);
+);
   }
 }
 

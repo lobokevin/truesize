@@ -5,7 +5,6 @@ const Order = require('./server/db/models/order');
 const Purchase = require('./server/db/models/purchase');
 const Review = require('./server/db/models/review');
 const ShippingAddress = require('./server/db/models/shippingAddress');
-const axios = require('axios');
 
 const users = [
   {
