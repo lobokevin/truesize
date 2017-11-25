@@ -64,7 +64,6 @@ class Home extends React.Component {
     tracker.on('track', (event) =>  {
 
       event.data.forEach(function(rect) {
-
         obj = {
           color: rect.color,
           colorMatchedStatus: true,

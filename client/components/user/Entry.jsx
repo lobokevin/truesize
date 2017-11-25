@@ -61,10 +61,8 @@ class Entry extends React.Component {
 			    	</fieldset>
 			      	</form>
                       <hr/>
-                    <center><h4>Or</h4></center>
                     <a href="/auth/google">
-                <i className="fa fa-google-plus fa-lg" />
-                Log in with Google
+                <img src="/images/btn_google_signin_dark_normal_web@2x.png" style={styles.googleSignIn}/>
               </a>
 			    </div>
 			</div>
@@ -92,8 +90,9 @@ class Entry extends React.Component {
 			    	</fieldset>
 			      	</form>
                       <hr/>
-                    <center><h4>Or</h4></center>
-                    <input className="btn btn-md" type="submit" value="Signup via facebook" />
+                      <a href="/auth/google">
+                      <img src="/images/btn_google_signin_dark_normal_web@2x.png" style={styles.googleSignIn}/>
+                    </a>
 			    </div>
 			</div>
 		</div>

@@ -35,6 +35,8 @@ export default {
   },
   footer : {
   backgroundColor: '#2e393c',
+  position: 'absolute',
+  width: '100%',
   marginTop: '40 px',
   textAlign: 'left',
   color: 'white',
@@ -84,5 +86,18 @@ export default {
   buttonBorder: {
     padding: '15px',
     margin: '15px',
+  },
+  googleSignIn: {
+    height: '45px',
+    width: '200px'
+  },
+  navbarLogo: {
+    height: '55px',
+    display: 'inline',
+    margin: '20px'
+  },
+  displayInline: {
+    display: 'inline',
+    margin: '10px'
   }
 }
