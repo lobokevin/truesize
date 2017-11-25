@@ -7,8 +7,8 @@ export default class Footer extends Component {
       <div>
         <hr/>
       <footer style={styles.footer}>
-    <p>Made by <a href="#">Kevin Lobo</a></p>
-    </footer>
+        <small>GitHub page <a href="https://github.com/lobokevin/truesize">here</a>. This project is inspired by <a href="https://sizer.me/" target="_blank">sizer.me</a></small>
+       </footer>
     </div>
     );
   }

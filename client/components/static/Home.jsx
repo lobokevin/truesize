@@ -7,15 +7,6 @@ import ColorMatchedDiv from './ColorMatchDiv';
 import HomeInfo from './HomeInfo';
 import SuccessDisplay from './SuccessDisplay';
 import ProductList from '../product/ProductList';
-
-import {
-  PageHeader,
-  Grid,
-  Row,
-  Col,
-  Button,
-  Well
-} from 'react-bootstrap';
 import styles from '../../styles.js'
 
 class Home extends React.Component {
@@ -30,7 +21,8 @@ class Home extends React.Component {
       y: 0,
       width: 0,
       height: 0,
-      color: '#FF0000'
+      color: '#FF0000',
+      size: ''
     };
 
     this.handleClick = this.handleClick.bind(this);
@@ -84,7 +76,7 @@ class Home extends React.Component {
 
       })
 
-      this.setState({colorMatched : obj.colorMatchedStatus});
+      this.setState({colorMatched : obj.colorMatchedStatus, size: 'L'});
     });
 
     window.tracking.track(img, tracker);
@@ -100,40 +92,44 @@ class Home extends React.Component {
   }
 
   processSampleImage(){
-    this.setState({screenshot: "http://i66.tinypic.com/2ec2csz.png"})
+    this.setState({screenshot: "/images/sample.png"})
   }
 
   renderSampleImage(){
-  return(<div><p>Click here, or simply drop an image here if you already have an image of yourself. Else use the sample image given below!</p><img onClick={this.processSampleImage} width={"80%"} height="400" src="http://i66.tinypic.com/2ec2csz.png" /></div>);
+  return(<div><img onClick={this.processSampleImage} width={"80%"} height="400" src="/images/sample.png" /></div>);
   }
 
   render() {
     return (
       <div className="container">
+        <div className="row">
+          <HomeInfo />
+        </div>
           <div className="row">
+
             <div className="col-6">
               <Webcam style={styles.webcam} screenshotFormat="image/jpeg" audio={false} ref={node => this.webcam = node}/>
               <button type="button" className="btn btn-primary" onClick={this.handleClick}>Capture</button>
             </div>
-            <div className="col-6" style={styles.positionRelative}>
-              <Dropzone  style={styles.dropzone} onDrop={this.onDrop.bind(this)}>
-                {this.state.screenshot
+
+            <div className="col-6" style={styles.divOutline}>
+            {this.state.screenshot? null: <Dropzone  style={styles.dropzone} onDrop={this.onDrop.bind(this)}>
+              <p><medium>Click here, or simply drop an image here if you already have an image of yourself. Else use the sample image given below!</medium></p>
+              </Dropzone>}
+              {this.state.screenshot ? null:
+              this.renderSampleImage()}
+              {this.state.screenshot //display screenshot
                   ? <div style={styles.positionRelative}>
                     <img ref={(img) => { this.img = img;}} src={this.state.screenshot} style={styles.screenshotDiplay}/>
-                    {this.state.colorMatched ?
-                  <ColorMatchedDiv /> : null}
                     </div>
                   : null}
-                  {this.state.screenshot ? null:
-              this.renderSampleImage()}
-              </Dropzone>
-              {this.state.screenshot?
-               <button style={styles.marginTop10} type="button" className="btn btn-primary"  onClick={this.handleProcess}>Process</button>
+              {this.state.screenshot? //button
+               <button style={Object.assign({},styles.positionRelative, styles.marginTop5)} type="button" className="btn btn-primary"  onClick={this.handleProcess}>Process</button>
                : null}
             </div>
           </div>
 
-          {this.state.colorMatched ? <SuccessDisplay size="M" /> : null}
+          {this.state.colorMatched ? <SuccessDisplay size={this.state.size} /> : null}
         </div>
     );
   }
