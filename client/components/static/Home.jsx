@@ -7,7 +7,7 @@ import ColorMatchedDiv from './ColorMatchDiv';
 import HomeInfo from './HomeInfo';
 import SuccessDisplay from './SuccessDisplay';
 import ProductList from '../product/ProductList';
-import styles from '../../styles.js'
+import styles from '../../styles.js';
 
 class Home extends React.Component {
 
