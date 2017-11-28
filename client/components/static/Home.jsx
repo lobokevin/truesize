@@ -1,5 +1,4 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
 import Webcam from 'react-webcam';
 import Dropzone from 'react-dropzone';
 import tracking from 'tracking';
@@ -58,16 +57,16 @@ class Home extends React.Component {
       y: 0,
       width: 0,
       height: 0,
-      color: "red"
+      color: 'red'
     }
 
-    tracker.on('track', (event) =>  {
+    tracker.on('track', (event) => {
 
       event.data.forEach(function(rect) {
         obj = {
           color: rect.color,
           colorMatchedStatus: true,
-          x : rect.x,
+          x: rect.x,
           y: rect.y,
           width: rect.width,
           height: rect.height
@@ -75,7 +74,7 @@ class Home extends React.Component {
 
       })
 
-      this.setState({colorMatched : obj.colorMatchedStatus, size: 'L'});
+      this.setState({colorMatched: obj.colorMatchedStatus, size: 'L'});
     });
 
     window.tracking.track(img, tracker);
@@ -90,12 +89,14 @@ class Home extends React.Component {
     reader.readAsDataURL(file)
   }
 
-  processSampleImage(){
-    this.setState({screenshot: "/images/sample.png"})
+  processSampleImage() {
+    this.setState({screenshot: '/images/sample.png'})
   }
 
-  renderSampleImage(){
-  return(<div><img onClick={this.processSampleImage} width={"80%"} height="400" src="/images/sample.png" /></div>);
+  renderSampleImage() {
+    return (
+      <div><img onClick={this.processSampleImage} width={'80%'} height="400" src="/images/sample.png" /></div>
+    );
   }
 
   render() {
@@ -104,32 +105,47 @@ class Home extends React.Component {
         <div className="row">
           <HomeInfo />
         </div>
-          <div className="row">
+        <div className="row">
 
-            <div className="col-6">
-              <Webcam style={styles.webcam} screenshotFormat="image/jpeg" audio={false} ref={node => this.webcam = node}/>
-              <button type="button" className="btn btn-primary" onClick={this.handleClick}>Capture</button>
-            </div>
-
-            <div className="col-6" style={styles.divOutline}>
-            {this.state.screenshot? null: <Dropzone  style={styles.dropzone} onDrop={this.onDrop.bind(this)}>
-              <p><medium>Click here, or simply drop an image here if you already have an image of yourself. Else use the sample image given below!</medium></p>
-              </Dropzone>}
-              {this.state.screenshot ? null:
-              this.renderSampleImage()}
-              {this.state.screenshot //display screenshot
-                  ? <div style={styles.positionRelative}>
-                    <img ref={(img) => { this.img = img;}} src={this.state.screenshot} style={styles.screenshotDiplay}/>
-                    </div>
-                  : null}
-              {this.state.screenshot? //button
-               <button style={Object.assign({},styles.positionRelative, styles.marginTop5)} type="button" className="btn btn-primary"  onClick={this.handleProcess}>Process</button>
-               : null}
-            </div>
+          <div className="col-6">
+            <Webcam style={styles.webcam} screenshotFormat="image/jpeg" audio={false} ref={node => this.webcam = node}/>
+            <button type="button" className="btn btn-primary" onClick={this.handleClick}>Capture</button>
           </div>
 
-          {this.state.colorMatched ? <SuccessDisplay size={this.state.size} /> : null}
+          <div className="col-6" style={styles.divOutline}>
+            {this.state.screenshot
+              ? null
+              : <Dropzone style={styles.dropzone} onDrop={this.onDrop.bind(this)}>
+                <p>
+                  <medium>Click here, or simply drop an image here if you already have an image of yourself. Else use the sample image given below!</medium>
+                </p>
+              </Dropzone>}
+            {this.state.screenshot
+              ? null
+              : this.renderSampleImage()}
+            {this.state.screenshot
+              ? <div style={styles.positionRelative}>
+                  <img ref={(img) => {
+                    this.img = img;
+                  }} src={this.state.screenshot} style={styles.screenshotDiplay}/>
+                </div>
+              : null}
+            {this.state.screenshot
+              ?  <button
+              style = {
+              Object.assign({}, styles.positionRelative, styles.marginTop5)
+          }
+          type = "button" className = "btn btn-primary" onClick = {
+            this.handleProcess
+          } > Process </button>
+               : null}
+          </div>
         </div>
+
+        {this.state.colorMatched
+          ? <SuccessDisplay size={this.state.size} />
+          : null}
+      </div>
     );
   }
 
