@@ -2,14 +2,6 @@ import React from 'react';
 import {Link, NavLink, withRouter} from 'react-router-dom';
 import {connect} from 'react-redux';
 import {logout} from '../../store/sessions';
-import {
-  PageHeader,
-  Grid,
-  Row,
-  Col,
-  ButtonGroup,
-  Button
-} from 'react-bootstrap';
 import history from '../../history';
 import style from '../../styles.js';
 
