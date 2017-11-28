@@ -4,13 +4,17 @@
 
 An e-Commerce website which uses rudimentary Computer Vision to generate the correct shirt brand/size for you!
 
-## Why? I built this to demonstrate the following -
+### Functionality
 
 1. oAuth / Signin using Passport.js
 2. Deploying the production ready code & DB through Heroku
 3. Testing using & Continuous Integration using Travis CI
 
-Includes end to end session logic for maintaining session & shopping cart checkout
+Additionally, standard CRUD functions for e-commerce apps -
+
+1. End to end session logic for maintaining session
+2. Shopping Cart checkout
+3. User sessions
 
 ### Deployed on Heroku
 
@@ -19,9 +23,6 @@ Includes end to end session logic for maintaining session & shopping cart checko
 ### Tech Stack
 
 PostgreSQL (Sequelize), Node.js (Express.js) & React with Redux, BootStrap 4
-
-### Functionality
-User sessions, Local and open auth, Add to cart
 
 ### Credits
 
