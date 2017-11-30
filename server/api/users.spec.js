@@ -9,19 +9,12 @@ describe('User routes', () => {
     return db.sync({ force: true });
   });
 
-  describe('/api/users/', () => {
-    const codysEmail = 'cody@puppybook.com';
+  describe('Home route /', () => {
 
-    beforeEach(() => {
-      return User.create({
-        email: codysEmail
-      });
-    });
-
-    it('GET /api/users', () => {
-      return request(app).get('/api/users').expect(200).then(res => {
-        expect(res.body).to.be.an('array');
-        expect(res.body[0].email).to.be.equal(codysEmail);
+    it('GET /', () => {
+      return request(app).get('/').expect(200)
+      .then(res => {
+        expect(res.status).to.be.equal(200);
       });
     });
   }); // end describe('/api/users')
