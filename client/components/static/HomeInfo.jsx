@@ -1,17 +1,13 @@
 import React from 'react';
 import styles from '../../styles.js'
 
-export default class HomeInfo extends React.Component{
-  render(){
-    return(<div className="alert alert-dismissible fade show col-12" role="alert" style={styles.homeInfo}>
-    <h4 className="alert-heading">What is True Size?</h4>
-    <button type="button" className="close" data-dismiss="alert" aria-label="Close">
-    <span aria-hidden="true">&times;</span>
-    </button>
+export default function HomeInfo(){
+    return ( <div className="col-11" style={styles.homeInfo}>
     <blockquote>
-    <p>This is an e-commerce website - which uses rudimentary computer vision (<a href="https://trackingjs.com/" target="_blank">tracking.js</a>) to filter shirts which fit you perfectly!</p>
-     <small>Tech Stack and finer details on the <a href="https://github.com/lobokevin/truesize"><cite title="GitHub">GitHub page</cite></a></small>
+      <h6> First time here? What is True Size? </h6>
+    <small>An e-commerce web app which uses rudimentary computer vision to recommend shirts for you. <br />Uses (<a href="https://trackingjs.com/" target="_blank">tracking.js</a>). </small>
+     <small>Credits and <a href="https://github.com/lobokevin/truesize"><cite title="GitHub">GitHub repo here</cite></a></small>
     </blockquote>
   </div>);
   }
-}
+

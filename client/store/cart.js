@@ -44,8 +44,8 @@ export default function reducer(cart = [], action) {
         }
       })
       return JSON.parse(JSON.stringify(cart));
-    
-    case DESTROY_CART: 
+
+    case DESTROY_CART:
       return [];
 
     default:
@@ -67,6 +67,6 @@ export const removeFromCart = (order) => dispatch => {
     dispatch(remove(order));
 }
 
-export const destroyCart= () => dispatch => {
+export const destroyCart = () => dispatch => {
   dispatch(destroy())
 }

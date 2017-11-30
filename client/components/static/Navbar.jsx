@@ -1,5 +1,5 @@
 import React from 'react';
-import {Link, NavLink, withRouter} from 'react-router-dom';
+import { NavLink} from 'react-router-dom';
 import {connect} from 'react-redux';
 import {logout} from '../../store/sessions';
 import history from '../../history';
@@ -42,7 +42,7 @@ class Navbar extends React.Component {
         <div className="row align-items-end">
 
           <div className="col-6 align-items-end">
-            <NavLink to="/"><h2 style={style.displayInline}>True Size</h2 ><img src="/images/logo.png" style={style.navbarLogo}/></NavLink>
+            <NavLink to="/"><h3 style={style.displayInline}>True Size</h3 ><img src="/images/logo.png" style={style.navbarLogo} /></NavLink>
           </div>
            <div className="col-6">
            <nav className="navbar">
