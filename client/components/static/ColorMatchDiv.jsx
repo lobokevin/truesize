@@ -10,7 +10,7 @@ export default class ColorMatchedDiv extends React.Component{
     }
     render(){
     return (
-      <div style={Object.assign({},styles.colorMatchedDiv, {backgroundColor: '	#5f4c04'})}> Color
+      <div style={Object.assign({},styles.colorMatchedDiv, {backgroundColor: '#5f4c04'})}> Color
       </div>
      );
     }
