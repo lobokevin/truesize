@@ -10,7 +10,7 @@
     "start": "node server",
     "start-dev": "npm run build-client-watch & npm run start-server",
     "start-server": "NODE_ENV='development' nodemon server -e html,js,scss --ignore public",
-    "test": "NODE_ENV='test' DATABASE_URL='postgres://jdluytsfzzlpxs:a8fbd7cda5756102802c5fd0dd0c6800027bd864df874997d16c969eb64dacb1@ec2-54-83-35-31.compute-1.amazonaws.com:5432/d95rbe803ie0gl&sslmode=require' mocha ./server/**/*.spec.js ./server/**/**/*.spec.js --compilers js:babel-register",
+    "test": "NODE_ENV='test' DATABASE_URL='postgres://jdluytsfzzlpxs:a8fbd7cda5756102802c5fd0dd0c6800027bd864df874997d16c969eb64dacb1@ec2-54-83-35-31.compute-1.amazonaws.com:5432/d95rbe803ie0gl&sslmode=true' mocha ./server/**/*.spec.js ./server/**/**/*.spec.js --compilers js:babel-register",
     "seed": "node seed.js"
   },
   "author": "Kevin Lobo",
