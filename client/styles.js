@@ -16,7 +16,8 @@ export default {
   colorMatchedDiv: {
     color: 'white',
     padding: '3px',
-    border: '1px solid',
+    margin: '5px 0px 5px 0px',
+    border: '0px',
     position: 'absolute',
     zIndex: 5,
     WebkitTransition: 'all', // note the capital 'W' here
@@ -62,6 +63,7 @@ export default {
     padding: '20px'
   },
   dropzone: {
+    margin: '5px 0px 0px 0px'
   },
   screenshotDiplay: {
     marginTop: '35px',
@@ -99,5 +101,8 @@ export default {
   },
   displayInline: {
     display: 'inline'
+  },
+  backgroundColorGrey: {
+    backgroundColor: '#e5e5e5'
   }
 }

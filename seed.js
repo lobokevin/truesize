@@ -30,7 +30,8 @@ const products = [
     inventoryQuantity: 500,
     price: 29.99,
     size: 'M',
-    category: 'shirt'
+    category: 'shirt',
+    image: 'https://uniqlo.scene7.com/is/image/UNIQLO/goods_17_400326?$prod$'
   },
   {
     title: 'Land\'s End Flannel Shirt',
@@ -38,7 +39,7 @@ const products = [
     inventoryQuantity: 100,
     price: 48.99,
     size: 'L',
-    category: 'shirt'
+    category: 'shirt',
   },
   {
     title: 'Levi\'s Rugged Wear',
@@ -46,7 +47,8 @@ const products = [
     inventoryQuantity: 100,
     price: 99.99,
     size: 'S',
-    category: 'shirt'
+    category: 'shirt',
+    image: 'http://www.greatlakesprep.com/wp-content/uploads/2012/09/Lands-End-Canvas-Plaid-Poplin-Shirt.jpg'
   },
   {
     title: 'AEO',
@@ -54,7 +56,35 @@ const products = [
     inventoryQuantity: 100,
     price: 45.99,
     size: 'M',
-    category: 'shirt'
+    category: 'shirt',
+    image: 'https://s7d2.scene7.com/is/image/aeo/2153_9826_309_of?$PDP_78_Main$'
+  },
+  {
+    title: 'Rugged Wear',
+    description: 'Wrangler\'s Cut',
+    inventoryQuantity: 100,
+    price: 95.99,
+    size: 'L',
+    category: 'shirt',
+    image: 'http://lsco1.scene7.com/is/image/lsco/Levi/clothing/211980025-front-pdp.jpg?$2500x2000$'
+  },
+  {
+    title: 'Slim-Fit Check-Print Classic ',
+    description: 'Old Navy',
+    inventoryQuantity: 100,
+    price: 20.99,
+    size: 'M',
+    category: 'shirt',
+    image: 'http://www.oldnavy.com/products/res/thumbimg/slim-fit-check-print-classic-shirt-for-men-red-all-over.jpg'
+  },
+  {
+    title: 'Cotton Wool Elbow Patch',
+    description: 'J Crew',
+    inventoryQuantity: 100,
+    price: 84,
+    size: 'L',
+    category: 'shirt',
+    image: 'https://cdnd.lystit.com/photos/8acf-2015/11/10/jcrew-old-forest-cotton-wool-elbow-patch-shirt-in-clark-plaid-green-product-1-826370856-normal.jpeg'
   }
 ];
 

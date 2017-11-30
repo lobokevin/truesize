@@ -10,7 +10,7 @@ export default class ColorMatchedDiv extends React.Component{
     }
     render(){
     return (
-      <div style={Object.assign({},styles.colorMatchedDiv, {backgroundColor: '#5f4c04'})}> Color
+      <div style={Object.assign({}, styles.colorMatchedDiv, {backgroundColor: '#2e393c'})}> <h6>We detected your size as '{this.props.size}'!</h6>
       </div>
      );
     }

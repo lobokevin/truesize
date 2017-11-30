@@ -7,7 +7,7 @@ export default function Footer() {
         <hr />
       <footer style={styles.footer}>
         <small>GitHub page <a href="https://github.com/lobokevin/truesize">here</a>. This project is inspired by <a href="https://sizer.me/" target="_blank">sizer.me</a><br />
-        Sample picture credit <a href="http://www.prana.com/broderick-slim-shirt.html">here </a></small>
+        Sample picture credit <a href="https://www.untuckit.com/products/durif-wrinkle-free" target="_blank">here </a></small>
        </footer>
     </div>
     );
