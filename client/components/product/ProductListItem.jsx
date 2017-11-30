@@ -25,11 +25,11 @@ class ProductListItem extends Component {
 		return (
 				<div className="row" style={styles.productDivOutline}>
 					<div className="col-3">
-						<img className="product-image" src={product.image} style={styles.productImage}/>
+						<img className="product-image" src={product.image} style={styles.productImage} />
 					</div>
 					<div className="col-3">
 						<h5>Size : {product.size} </h5>
-					<h5>Price : ${product.price} </h5></div>
+					<h8>Price : ${product.price} </h8></div>
 					<div className="col-4">
 						<p>
 							<Link to={`/products/${product.id}`}>{product.title}</Link>

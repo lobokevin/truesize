@@ -2,6 +2,10 @@
 [![Build Status](https://travis-ci.org/lobokevin/truesize.svg?branch=master)](https://travis-ci.org/lobokevin/truesize)
 [![NSP Status](https://nodesecurity.io/orgs/kevinlobo/projects/63414c4f-d028-48cd-a8a7-558a35b3aeb9/badge)](https://nodesecurity.io/orgs/kevinlobo/projects/63414c4f-d028-48cd-a8a7-558a35b3aeb9)
 
+> If the above build badge says 'failing', it's a connection bug being tracked [here](https://github.com/travis-ci/travis-ci/issues/8837).
+>
+> The web app is still functional though! And the bug should be resolved shortly
+
 An e-Commerce website which uses rudimentary Computer Vision to generate the correct shirt brand/size for you!
 
 ### Functionality

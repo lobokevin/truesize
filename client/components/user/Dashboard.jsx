@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import { Row, Input } from 'react-materialize';
 import { connect } from 'react-redux';
 import UserProfile from './UserProfile.jsx';
 import OrderList from './OrderList.jsx';
@@ -26,7 +25,6 @@ class Dashboard extends Component {
         <UserProfile user={user} />
         <div className="row">
           <OrderList orders={this.props.orders} />
-          <ReviewsList reviews={this.props.reviews} />
         </div>
       </div>
     );

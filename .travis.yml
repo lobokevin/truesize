@@ -1,1 +1,13 @@
 language: node_js
+node_js:
+- '9.2'
+deploy:
+  provider: heroku
+  app: truesize
+  api_key:
+    secure: O9WM7b6Q5rvvQaiD6Xzd7z2N9S8yoXMZJUzKp4Mnff68/heKKVecwAhg1jOCqiFvj7V3al51Uv/Tpl0RA6xm5W1B8DckJ0CeSoiiDmhtzWMjfnraYAU8luGNd8/u5mCECvKKwY/Dd++Z45x30CZVvGsLnym9FCwmOXLMa2cl8i8bfWtk2fw7liBiLEFOP/jKK2VfB1uPi1o5yCZdxXsHcCKHL7vXcAt5whs7G833TKIchhgPqDPxMNtGPOubPK9bxrMLuVqEOTZR4AvZ26nBsIFINZsBzDE2wzY7SmqrKWsKjkWC2wOfAFj7O4S/LSEWdy5gT6yNWOMYPZtWGs5sh6q0AbqGMQadeEI++xkz2MgS3H31RWX3faYtM7iTrm6mhESIsz3etJ6hIQLrKC0kj8MWG2Bnm3n/7HdGDbubEYTJYtDLo1t/IatTrCul+r0ERwAF2zpg131JvYvnthpmT1rbEXpTaMPvVybgIt2WZbFK8kI9ho3o4dGDojHhLF7rTs9+C9GSQuFX2fSVhPSaHxs35F1MNNoi/fQeXD4lUDZlLaXALhdEanrAJW+h9iitqRN/mcVwLm3a1Pr6oW/v2RsjwmG407z3094bYzvaEWNLPVbLDISt3KfJNu0f/0kYAmcRP/UyU4HQjalVa3zfkaOeohl1N3zaGpfZX4GKLP4=
+
+addons:
+  apt:
+    packages:
+      - libssl1.0.0

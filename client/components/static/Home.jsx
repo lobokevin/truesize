@@ -1,7 +1,7 @@
 import React from 'react';
 import Webcam from 'react-webcam';
 import Dropzone from 'react-dropzone';
-import tracking from 'tracking'; {/* npm module failure documented on official tracking repo*/}
+import tracking from 'tracking'; {/* npm module bug documented on official tracking GitHub repo*/}
 import ColorMatchedDiv from './ColorMatchDiv';
 import HomeInfo from './HomeInfo';
 import SuccessDisplay from './SuccessDisplay';
@@ -33,14 +33,14 @@ class Home extends React.Component {
     let img = this.img;
     let canvas = this.canvas;
 
-    window.tracking.ColorTracker.registerColor('green', function(r, g, b) {
-      if (r < 115 && g < 93 && b < 53) {
+    window.tracking.ColorTracker.registerColor('blue', function(r, g, b) {
+      if (r < 180 && g < 186 && b < 224) {
         return true;
       }
       return false;
       });
 
-     this.tracker = new window.tracking.ColorTracker(['magenta', 'cyan', 'yellow', 'green']);
+     this.tracker = new window.tracking.ColorTracker(['magenta', 'cyan', 'yellow', 'blue']);
   }
 
   handleClick() {
@@ -118,7 +118,7 @@ class Home extends React.Component {
               ? null
               : <Dropzone style={styles.dropzone} onDrop={this.onDrop.bind(this)}>
                 <p>
-                  <small>Click here, or simply drop an image here if you already have an image of yourself. Otherwise use the sample image given below!</small>
+                  <h6>Click here or drop an image of yourself here. Otherwise click the sample image below to use it!</h6>
                 </p>
               </Dropzone>}
             {this.state.screenshot
@@ -142,7 +142,7 @@ class Home extends React.Component {
           } > Process </button>
                : null}
                {this.state.colorMatched
-          ? <ColorMatchedDiv color={this.state.color} />
+          ? <ColorMatchedDiv color={this.state.color} size={this.state.size} />
           : null}
           </div>
           </div>
