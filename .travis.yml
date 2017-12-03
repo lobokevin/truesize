@@ -11,3 +11,4 @@ addons:
   apt:
     packages:
       - libssl1.0.0
+      - openssl
