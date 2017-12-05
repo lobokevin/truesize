@@ -13,9 +13,11 @@ class ProductList extends Component {
       productList: this.props.products,
       length: this.props.products.length
     }
+
   }
 
   render() {
+
     return (
       <div>
       <div className="row">

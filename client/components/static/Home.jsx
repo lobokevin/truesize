@@ -74,9 +74,10 @@ class Home extends React.Component {
         this.setState({colorMatched: obj.colorMatchedStatus, size: 'M',
         width: obj.width, height: obj.height, color: obj.color});
       }
-
+      else {
       this.setState({colorMatched: obj.colorMatchedStatus, size: 'L',
       width: obj.width, height: obj.height, color: obj.color});
+      }
     });
 
     window.tracking.track(img, this.tracker);
