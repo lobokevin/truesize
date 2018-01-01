@@ -159,10 +159,10 @@ class Home extends React.Component {
                 onDrop={this
                 .onDrop
                 .bind(this)}>
-                <p>
+
                   <h6>Click here or drop an image of yourself here. Otherwise click the sample
                     image below to use it!</h6>
-                </p>
+
               </Dropzone>}
             {this.state.screenshot
               ? null

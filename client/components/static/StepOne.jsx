@@ -9,23 +9,15 @@ export default function StepOne() {
       </header>
       <ul className="features">
         <li>
-          <span className="icon major style1 fa-code"/>
+          <span className="icon major style1 fa-code" />
           <h3>Ipsum consequat</h3>
           <p>Sed lorem amet ipsum dolor et amet nullam consequat a feugiat consequat
             tempus veroeros sed consequat.</p>
         </li>
         <li>
-          <span className="icon major style3 fa-copy"/>
+          <span className="icon major style3 fa-copy" />
           <h3 >
             Amed sed feugiat
-          </h3>
-          <p>Sed lorem amet ipsum dolor et amet nullam consequat a feugiat consequat
-            tempus veroeros sed consequat.</p >
-        </li>
-        <li >
-          <span className="icon major style5 fa-diamond"/>
-          <h3 >
-            Dolor nullam
           </h3>
           <p>Sed lorem amet ipsum dolor et amet nullam consequat a feugiat consequat
             tempus veroeros sed consequat.</p >

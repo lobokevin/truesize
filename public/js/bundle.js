@@ -1065,8 +1065,10 @@ exports.default = {
   backgroundColorGrey: {
     backgroundColor: '#e5e5e5'
   },
-  float: {
-    float: 'none'
+  floatNone: {
+    float: 'none',
+    textAlign: 'center',
+    display: 'inlineBlock'
   }
 };
 
@@ -17895,13 +17897,9 @@ var Home = function (_React$Component) {
                 style: _styles2.default.dropzone,
                 onDrop: this.onDrop.bind(this) },
               _react2.default.createElement(
-                'p',
+                'h6',
                 null,
-                _react2.default.createElement(
-                  'h6',
-                  null,
-                  'Click here or drop an image of yourself here. Otherwise click the sample image below to use it!'
-                )
+                'Click here or drop an image of yourself here. Otherwise click the sample image below to use it!'
               )
             ),
             this.state.screenshot ? null : this.renderSampleImage(),
@@ -18264,70 +18262,44 @@ var Navbar = function (_React$Component) {
     value: function render() {
       return _react2.default.createElement(
         'nav',
-        { className: 'navbar navbar-expand-lg navbar-light bg-light', style: _styles2.default.floatNone },
+        { id: 'navbar' },
         _react2.default.createElement(
-          'a',
-          { className: 'navbar-brand', href: '#' },
-          'Navbar '
-        ),
-        _react2.default.createElement(
-          'button',
-          {
-            className: 'navbar-toggler',
-            type: 'button',
-            'data-toggle': 'collapse',
-            'data-target': '#navbarNav',
-            'aria-controls': 'navbarNav',
-            'aria-expanded': 'false',
-            'aria-label': 'Toggle navigation' },
-          _react2.default.createElement('span', { className: 'navbar-toggler-icon' })
-        ),
-        _react2.default.createElement(
-          'div',
-          { className: 'collapse navbar-collapse', id: 'navbarNav' },
+          'ul',
+          null,
           _react2.default.createElement(
-            'ul',
-            { className: 'navbar-nav' },
+            'li',
+            null,
             _react2.default.createElement(
-              'li',
-              { className: 'nav-item active' },
-              _react2.default.createElement(
-                'a',
-                { className: 'nav-link', href: '#' },
-                'Home ',
-                _react2.default.createElement(
-                  'span',
-                  { className: 'sr-only' },
-                  ' (current) '
-                )
-              )
-            ),
+              _reactRouterDom.NavLink,
+              { to: '/products', className: 'active' },
+              'Introduction'
+            )
+          ),
+          _react2.default.createElement(
+            'li',
+            null,
             _react2.default.createElement(
-              'li',
-              { className: 'nav-item' },
-              _react2.default.createElement(
-                'a',
-                { className: 'nav-link', href: '#' },
-                'Features '
-              )
-            ),
+              'a',
+              { href: '#first' },
+              'First Section'
+            )
+          ),
+          _react2.default.createElement(
+            'li',
+            null,
             _react2.default.createElement(
-              'li',
-              { className: 'nav-item' },
-              _react2.default.createElement(
-                'a',
-                { className: 'nav-link', href: '#' },
-                'Pricing '
-              )
-            ),
+              'a',
+              { href: '#second' },
+              'Second Section'
+            )
+          ),
+          _react2.default.createElement(
+            'li',
+            null,
             _react2.default.createElement(
-              'li',
-              { className: 'nav-item' },
-              _react2.default.createElement(
-                'a',
-                { className: 'nav-link disabled', href: '#' },
-                'Disabled '
-              )
+              'a',
+              { href: '#cta' },
+              'Get Started'
             )
           )
         )
@@ -18440,21 +18412,6 @@ function StepOne() {
           'h3',
           null,
           'Amed sed feugiat'
-        ),
-        _react2.default.createElement(
-          'p',
-          null,
-          'Sed lorem amet ipsum dolor et amet nullam consequat a feugiat consequat tempus veroeros sed consequat.'
-        )
-      ),
-      _react2.default.createElement(
-        'li',
-        null,
-        _react2.default.createElement('span', { className: 'icon major style5 fa-diamond' }),
-        _react2.default.createElement(
-          'h3',
-          null,
-          'Dolor nullam'
         ),
         _react2.default.createElement(
           'p',
