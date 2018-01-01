@@ -1,35 +1,128 @@
 import React from 'react';
+import Dropzone from 'react-dropzone';
+import {connect} from 'react-redux';
+import {updateSizeThunk} from '../../store/products';
 import styles from '../../styles.js'
 
-export default function StepOne() {
+class StepOne extends React.Component{
+
+  constructor(props){
+    super(props);
+    this.state = {
+      screenshot: ''
+    }
+
+    this.processSampleImage = this
+    .processSampleImage
+    .bind(this);
+    this.clearState = this
+    .clearState
+    .bind(this);
+
+    this.updateSize = this
+.updateSize
+  .bind(this);
+  }
+
+  renderSampleImage() {
+
   return (
+    <img
+      onClick={this.processSampleImage}
+      width={'105%'}
+      height="400"
+      src="/images/sample.jpg" />
+  );
+  }
+
+  clearState(){
+    this.setState({screenshot: ''})
+  }
+
+  onDrop(files) {
+  let reader = new FileReader();
+  let file = files[0];
+  reader.onloadend = () => {
+    this.setState({files: file, screenshot: reader.result});
+  }
+  reader.readAsDataURL(file)
+  }
+
+  updateSize(size){
+this
+  .props
+  .updateSizeThunk('M' || size);
+  }
+
+  upload(){
+
+  return (<li> <h3 >
+  . . Or Upload a picture!
+  </h3> <Dropzone style = {
+  styles.dropzone
+}
+onDrop = {
+  this
+    .onDrop
+    .bind(this)
+} > <p>Click here to upload or drop an image of yourself here.</p> </Dropzone>
+        </li >);
+}
+
+  processSampleImage() {
+  this.setState({screenshot: '/images/sample.jpg'})
+  }
+
+  render(){
+  return (
+
     <section id="first" className="main special">
       <header className="major">
-        <h2>Magna veroeros</h2>
+        <h2>Step One: Find your size</h2>
       </header>
       <ul className="features">
         <li>
-          <span className="icon major style1 fa-code" />
-          <h3>Ipsum consequat</h3>
-          <p>Sed lorem amet ipsum dolor et amet nullam consequat a feugiat consequat
-            tempus veroeros sed consequat.</p>
+{
+  this.state.screenshot
+? <h3>Image received!</h3> : <h3>Click to use this sample image ..</h3>
+}
+{this.state.screenshot
+    ? null
+    : this.renderSampleImage()}
+
+{this.state.screenshot ?
+        <img ref={(img) => {
+          this.img = img;}}
+          width = {'105%'}
+          height = "400"
+          src={this.state.screenshot} />
+    : null
+}
         </li>
-        <li>
-          <span className="icon major style3 fa-copy" />
-          <h3 >
-            Amed sed feugiat
-          </h3>
-          <p>Sed lorem amet ipsum dolor et amet nullam consequat a feugiat consequat
-            tempus veroeros sed consequat.</p >
-        </li>
+{
+  this.state.screenshot
+? null
+: this.upload()
+}
       </ul>
       <footer className="major">
         <ul className="actions">
           <li>
-            <a href="generic.html" className="button">Learn More</a >
+            <a className="button" onClick={this.clearState}>Reset Image!</a >
           </li>
+    <li > <a className="button special" onClick={this.updateSize('L')}>Get Size!</a > </li>
+
         </ul>
       </footer >
     </section>
   );
 }
+}
+
+/* -----------------    CONTAINER     ------------------ */
+
+const mapState = null;
+const mapDispatch = {
+  updateSizeThunk
+};
+export default connect(mapState, mapDispatch)(StepOne);

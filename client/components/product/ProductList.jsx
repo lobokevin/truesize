@@ -21,11 +21,6 @@ class ProductList extends Component {
     return (
       <div>
       <div className="row">
-      <div className="col" style={Object.assign({}, styles.productDivOutline, styles.backgroundColorGrey)}>
-      {this.state.length === 7 ? <p>Looks like we don't have your size, go to the <Link to="/">Home </Link> to update your size!
-        </p> : <h5> We have your size! It's listed as <bold>'{this.state.productList[0].size}'</bold>
-        </h5> }
-        </div>
         </div>
         <ul className="collection container productList">
              {this.state.productList.map(product => <ProductListItem product={product} key={product.id} />)}

@@ -1,24 +1,27 @@
 import React from 'react';
-import styles from '../../styles.js'
+import {NavLink} from 'react-router-dom';
 
-export default function StepTwo() {
+export default function StepTwo(){
+
   return (
     <section id="cta" className="main special">
       <header className="major">
-        <h2>Congue imperdiet</h2>
-        <p>Donec imperdiet consequat consequat. Suspendisse feugiat congue<br />
-          posuere. Nulla massa urna, fermentum eget quam aliquet.</p>
+        <h2>Let's shop!</h2>
+        <p>Click here to go to the products page!<br />
+          </p>
       </header>
       <footer className="major">
         <ul className="actions">
           <li>
-            <a href="generic.html" className="button special">Get Started</a>
+            <a className="button">Get Started</a>
           </li>
           <li>
-            <a href="generic.html" className="button">Learn More</a>
+            <NavLink to="/products"><a className="button special">Products</a>
+            </NavLink>
           </li>
         </ul>
       </footer>
     </section >
   );
 }
+

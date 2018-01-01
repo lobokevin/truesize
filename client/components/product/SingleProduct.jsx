@@ -1,9 +1,5 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { fetchReviews } from '../../store/reviews';
-
-import Review from './Review.js'
-
 class SingleProduct extends Component {
   constructor(props) {
     super(props);
