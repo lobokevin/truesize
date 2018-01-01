@@ -104,5 +104,8 @@ export default {
   },
   backgroundColorGrey: {
     backgroundColor: '#e5e5e5'
+  },
+  float: {
+    float: 'none'
   }
 }
