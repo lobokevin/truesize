@@ -104,5 +104,10 @@ export default {
   },
   backgroundColorGrey: {
     backgroundColor: '#e5e5e5'
+  },
+  floatNone: {
+    float: 'none',
+    textAlign: 'center',
+    display: 'inlineBlock'
   }
 }

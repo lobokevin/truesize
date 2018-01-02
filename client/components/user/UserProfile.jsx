@@ -16,7 +16,7 @@ class UserProfile extends React.Component {
     let user = props.user;
     this.setState({
       fullName: user.fullName,
-      userID : user.id
+      userID: user.id
     })
   }
 
@@ -24,19 +24,18 @@ class UserProfile extends React.Component {
     const user = this.props.user;
 
     return (
-      <div className="row">
-        <div className="col-4" style={styles.productDivOutline}>
-          <div className="lb-header">
-            <h5>User Details</h5>
+
+        <div style={styles.productDivOutline}>
+          <div>
+            <h2>User Details</h2>
           </div>
-          <div className="text-left">
-            <h6><b>Name: </b>{user.fullName}</h6>
-            <h6><b>Email: </b>{user.email}</h6>
-            <h6><b>Billing Address: </b>{user.billingAddress}</h6>
-            <h6><b>Status: </b>{user.permissions}</h6>
+          <div>
+            <h3><b>Name: </b>{user.fullName}</h3>
+            <h3><b>Email: </b>{user.email}</h3>
+            <h3><b>Billing Address: </b>{user.billingAddress}</h3>
+            <h3><b>Status: </b>{user.permissions}</h3>
           </div>
         </div>
-      </div>
 
     )
 

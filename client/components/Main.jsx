@@ -47,7 +47,6 @@ export default class Main extends Component {
             <Route path="*" component={NotFound}/>
           </Switch>
         </main>
-        <Footer/>
       </div>
     );
   }

@@ -23,13 +23,14 @@ class Cart extends Component {
   render() {
 	const cart = this.props.cart;
 	return (
-		<div className="container">
+<div className = "container" id = "wrapper" > <div className="main">
 			<ul className="collection productList">
-				{cart.length ? cart.map(product => <CartItem product={product} key={product.id}/>) : <h3>Your cart is empty!</h3>}
+				{cart.length ? cart.map(product => <CartItem product={product} key={product.id} />) : <h3>Your cart is empty!</h3>}
 			</ul>
 			<br />
 			<button type="button" className="btn btn-primary" onClick={this.handleCheckout}>Checkout</button>
 		</div>
+    </div>
 	)
   }
 }

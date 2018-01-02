@@ -1,9 +1,9 @@
 import React from 'react';
-import { NavLink} from 'react-router-dom';
+import {NavLink} from 'react-router-dom';
 import {connect} from 'react-redux';
 import {logout} from '../../store/sessions';
 import history from '../../history';
-import style from '../../styles.js';
+import styles from '../../styles.js';
 
 /* -----------------    COMPONENT     ---------------s--- */
 
@@ -11,78 +11,80 @@ class Navbar extends React.Component {
 
   constructor(props) {
     super(props);
-    this.renderLoginSignup = this.renderLoginSignup.bind(this);
-    this.renderLogout = this.renderLogout.bind(this);
-    this.logout = this.logout.bind(this);
+    this.renderLoginSignup = this
+      .renderLoginSignup
+      .bind(this);
+    this.renderLogout = this
+      .renderLogout
+      .bind(this);
+    this.logout = this
+      .logout
+      .bind(this);
   }
 
   renderLoginSignup() {
-    return (<li className="nav-item">
-    <NavLink className="nav-link" to="/entry">Login/Signup</NavLink>
-  </li>)
+    return (
+      <li>
+        <NavLink to="/entry">Login/Signup</NavLink>
+      </li>
+    )
   }
 
   renderLogout() {
     const email = this.props.sessions.email;
-    return (<li className="nav-item">
-    <NavLink className="nav-link" to="/entry" onClick={this.logout}>Logout</NavLink>
-  </li>)
+    return (
+      <li>
+        <NavLink to="/entry" onClick={this.logout}>Logout</NavLink>
+      </li>
+    )
   }
 
   logout() {
-    //this is dispatching logout, waiting for logout thunk, then pushing to history
-    this.props.logout().then(() => {
-      this.props.history.push('/home');
-    }).catch(console.log);
+
+    this
+      .props
+      .logout()
+      .then(() => {
+        this
+          .props
+          .history
+          .push('/home');
+      })
+      .catch(console.log);
   }
 
   render() {
-     return (
-         <div className="container" style={style.marginTop}>
-        <div className="row align-items-end">
-
-          <div className="col-6 align-items-end">
-            <NavLink to="/"><h3 style={style.displayInline}>True Size</h3 ><img src="/images/logo.png" style={style.navbarLogo} /></NavLink>
-          </div>
-           <div className="col-6">
-           <nav className="navbar">
-
-           <ul className="nav navbar-default">
-       <li className="nav-item ">
-       <NavLink className="nav-link" to="/">Home</NavLink>
+return (
+  <nav id="navbar">
+    <ul>
+      <li>
+        <NavLink to="/">Home</NavLink>
       </li>
-  <li className="nav-item">
-  <NavLink className="nav-link" to="/products">Products</NavLink>
-  </li>
-  <li className="nav-item">
-  <NavLink className="nav-link" to="/dashboard">Dashboard</NavLink>
-  </li>
-  <li className="nav-item">
-  <NavLink className="nav-link" to="/checkout">Checkout</NavLink>
-  </li>
-                {this.props.sessions.email
-                  ? this.renderLogout()
-                  : this.renderLoginSignup()}
-                  </ul>
-                  </nav>
-          </div>
-
-        </div>
-        <hr/>
-      </div>
-
-    )
-  }
+      <li>
+    <NavLink to = "/products" >Products</NavLink>
+      </li>
+<li >
+<NavLink to = "/dashboard" >Dashboard</NavLink>
+</li>
+      <li>
+< NavLink to = "/checkout" >Cart</NavLink>
+</li>
+{
+  this.props.sessions.email
+    ? this.renderLogout()
+    : this.renderLoginSignup()
 }
 
-/* -----------------    CONTAINER     ------------------ */
-
-const mapState = state => state;
-const mapDispatch = dispatch => ({
-  logout: () => {
-    return dispatch(logout());
-  }
+    </ul>
+  </nav>
+)
+    }
+          } /* ----------------- CONTAINER ------------------ */
+          const mapState =
+              state => state;
+              const mapDispatch = dispatch => ({logout : () => {
+                return dispatch(logout());
+              }
 });
 
-// export default Navbar;
 export default connect(mapState, mapDispatch)(Navbar);

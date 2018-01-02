@@ -7,10 +7,9 @@ import products from './products';
 import sessions from './sessions';
 import orders from './orders';
 import purchases from './purchases';
-import reviews from './reviews';
 import cart from './cart';
 
-const reducer = combineReducers({ users, products, sessions, reviews, orders, cart, purchases});
+const reducer = combineReducers({ users, products, sessions, orders, cart, purchases});
 const middleware = applyMiddleware(thunkMiddleware, createLogger({ collapsed: true }));
 
 const store = createStore(reducer, composeWithDevTools(middleware));
