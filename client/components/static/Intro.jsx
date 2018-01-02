@@ -1,24 +1,23 @@
 import React from 'react';
-import styles from '../../styles.js'
 
 export default function Intro() {
   return (
-   < section id="intro" className= "main" >
+   <section id="intro" className= "main" >
    <div className="spotlight">
   <div className="content">
     <header className="major">
-      <h2>Ipsum sed adipiscing</h2>
+<h2 > How & Why to use this
+  ? </h2>
     </header>
-    <p>Sed lorem ipsum dolor sit amet nullam consequat feugiat consequat magna
-      adipiscing magna etiam amet veroeros. Lorem ipsum dolor tempus sit cursus.
-      Tempus nisl et nullam lorem ipsum dolor sit amet aliquam.</p>
+    <p>Upto 40% of merchandise bought online is returned at the expense of the retailer! (Source: Forbes)</p>
     <ul className="actions">
       <li>
-        <a href="generic.html" className="button">Learn More</a>
+<a href = "https://www.forbes.com/sites/stevendennis/2017/08/09/many-unhappy-returns-e-commerces-achilles-heel/#3455132b4bf2" target="_blank" className = "button" rel="noopener noreferrer"> Forbes article </a>
       </li>
     </ul>
   </div>
-  <span className="image"><img src="/stellar/images/pic01.jpg" alt="" /></span>
+  <span className="image"><img src="/images/shipping.jpg"
+  alt="" /></span>
 </div> </section>
 );
 }

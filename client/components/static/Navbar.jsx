@@ -24,8 +24,8 @@ class Navbar extends React.Component {
 
   renderLoginSignup() {
     return (
-      <li className="nav-item">
-        <NavLink className="nav-link" to="/entry">Login/Signup</NavLink>
+      <li>
+        <NavLink to="/entry">Login/Signup</NavLink>
       </li>
     )
   }
@@ -33,8 +33,8 @@ class Navbar extends React.Component {
   renderLogout() {
     const email = this.props.sessions.email;
     return (
-      <li className="nav-item">
-        <NavLink className="nav-link" to="/entry" onClick={this.logout}>Logout</NavLink>
+      <li>
+        <NavLink to="/entry" onClick={this.logout}>Logout</NavLink>
       </li>
     )
   }
@@ -58,24 +58,31 @@ return (
   <nav id="navbar">
     <ul>
       <li>
-        <NavLink to="/products" className="active">
-          Introduction</NavLink>
+        <NavLink to="/">Home</NavLink>
       </li>
       <li>
-        <a href="#first">First Section</a>
+    <NavLink to = "/products" >Products</NavLink>
       </li>
+<li >
+<NavLink to = "/dashboard" >Dashboard</NavLink>
+</li>
       <li>
-        <a href="#second">Second Section</a>
-      </li>
-      <li>
-        <a href="#cta">Get Started</a>
-      </li>
+< NavLink to = "/checkout" >Cart</NavLink>
+</li>
+{
+  this.props.sessions.email
+    ? this.renderLogout()
+    : this.renderLoginSignup()
+}
+
     </ul>
   </nav>
 )
     }
-          } /* ----------------- CONTAINER ------------------ */ const mapState =
-              state => state; const mapDispatch = dispatch => ({logout : () => {
+          } /* ----------------- CONTAINER ------------------ */
+          const mapState =
+              state => state;
+              const mapDispatch = dispatch => ({logout : () => {
                 return dispatch(logout());
               }
 });

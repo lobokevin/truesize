@@ -16,7 +16,7 @@ export default function StepTwo(){
             <a className="button">Get Started</a>
           </li>
           <li>
-            <NavLink to="/products"><a className="button special">Products</a>
+            <NavLink className="button special" to="/products">Products
             </NavLink>
           </li>
         </ul>

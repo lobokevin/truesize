@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from '../../styles.js'
+
 
 export default function Header() {
   return (
@@ -9,13 +9,10 @@ export default function Header() {
       <h1>
         True Size
       </h1>
-      <p>Just another free, fully responsive site template<br />
-        built by
-        <a href="https://twitter.com/ajlkn">
-          @ajlkn
-        </a>
-        for
-        <a href="https://html5up.net">HTML5 UP</a>.
+      <p>Upload your photograph and we'll find shirts which fit you perfectly!<br />
+        <a href="https://lobokevin/truesize" rel="noopener noreferrer" target="_blank">
+          GitHub page
+        </a>.
       </p>
     </header >
   );

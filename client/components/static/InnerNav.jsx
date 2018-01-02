@@ -5,16 +5,13 @@ export default function InnerNav() {
   return (
   <nav id="nav"> <ul>
   <li>
-    <a href="#intro" className="active"> Introduction</a>
+    <a href="#intro" className="active"> How & Why to use this?</a>
   </li>
   <li>
-    <a href="#first">First Section</a>
+    <a href="#first">Step 1: Get Size</a>
   </li>
   <li>
-    <a href="#second">Second Section</a>
-  </li>
-  <li>
-    <a href="#cta">Get Started</a>
+    <a href="#cta">Step 2: Get Products</a>
   </li>
 </ul> </nav>
 );

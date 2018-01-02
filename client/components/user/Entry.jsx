@@ -35,9 +35,11 @@ class Entry extends React.Component {
 
   render() {
     return (
-      <div className="container">
+<div className = "container" id = "wrapper" >
+  <div id="main">
     <div className="row">
-    	<div className="col-md-4 offset-md-1" style={styles.loginBox}>
+<ul className = "features" >
+<li>
     		<div className="panel panel-default">
 			  	<div className="panel-heading">
 			    	<h4 className="panel-title">Login</h4>
@@ -52,11 +54,6 @@ class Entry extends React.Component {
 			    		<div className="form-group">
 			    			<input className="form-control" placeholder="Password" name="password" type="password" />
 			    		</div>
-			    		<div className="checkbox">
-			    	    	<label>
-			    	    		<input name="remember" type="checkbox" value="Remember Me" /> Remember Me
-			    	    	</label>
-			    	    </div>
 			    		<input  className="btn btn-md btn-success" type="submit" value="Login" />
 			    	</fieldset>
 			      	</form>
@@ -66,9 +63,10 @@ class Entry extends React.Component {
               </a>
 			    </div>
 			</div>
-		</div>
+</li>
 
-    <div className="col-md-4 offset-md-1" style={styles.loginBox}>
+<li>
+    <div>
     		<div className="panel panel-default">
 			  	<div className="panel-heading">
 			    	<h4 className="panel-title">Signup</h4>
@@ -96,9 +94,12 @@ class Entry extends React.Component {
 			    </div>
 			</div>
 		</div>
-
+</li>
+</ul>
 	</div>
 </div>
+</div>
+
     );
   }
 }

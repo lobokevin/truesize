@@ -48,10 +48,10 @@ class StepOne extends React.Component{
   reader.readAsDataURL(file)
   }
 
-  updateSize(size){
+  updateSize(){
 this
   .props
-  .updateSizeThunk('M' || size);
+  .updateSizeThunk('M');
   }
 
   upload(){
@@ -110,7 +110,7 @@ onDrop = {
           <li>
             <a className="button" onClick={this.clearState}>Reset Image!</a >
           </li>
-    <li > <a className="button special" onClick={this.updateSize('L')}>Get Size!</a > </li>
+    <li > <a className="button special" onClick={this.updateSize}>Get Size!</a > </li>
 
         </ul>
       </footer >

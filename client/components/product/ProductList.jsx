@@ -19,13 +19,14 @@ class ProductList extends Component {
   render() {
 
     return (
-      <div>
-      <div className="row">
-        </div>
+    <div className = "container" id = "wrapper" >
+        <div id="main">
         <ul className="collection container productList">
              {this.state.productList.map(product => <ProductListItem product={product} key={product.id} />)}
         </ul>
-        </div>
+      </div>
+      </div>
+
     );
    }
  }
