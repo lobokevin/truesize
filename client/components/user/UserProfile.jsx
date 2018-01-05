@@ -42,7 +42,7 @@ class UserProfile extends React.Component {
   }
 }
 
-// container
+/* -----------------    CONTAINER     ------------------ */
 
 const mapState = () => ({});
 

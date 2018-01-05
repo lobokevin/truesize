@@ -23,6 +23,7 @@ class ReviewsListItem extends Component {
   }
 }
 
+/* -----------------    CONTAINER     ------------------ */
 const mapState = function(state, ownProps) {
   return {
     products: state.products
