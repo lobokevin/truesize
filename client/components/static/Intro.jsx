@@ -15,7 +15,7 @@ export default function Intro() {
             states between "25%-40% of merchandise bought online is returned at the expense
             of the retailer!"
           </p>
-          <br/>
+          <br />
           <p>
             So I looked around a bit tried implementing a simple prototype of
             <a
@@ -37,8 +37,7 @@ export default function Intro() {
             </li>
           </ul>
         </div>
-        <span className="image">
-          <img src="/images/shirt.jpg" width="250" /></span>
+        <img src="/images/shirt.jpg" width="250" height="250" />
       </div>
     </section>
   );

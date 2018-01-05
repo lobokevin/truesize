@@ -11,18 +11,12 @@ class Navbar extends React.Component {
 
   constructor(props) {
     super(props);
-    this.renderLoginSignup = this
-      .renderLoginSignup
-      .bind(this);
-    this.renderLogout = this
-      .renderLogout
-      .bind(this);
-    this.logout = this
-      .logout
-      .bind(this);
+    this.renderLoginSignup = this.renderLoginSignup.bind(this);
+    this.renderLogout = this.renderLogout.bind(this);
+    this.logout = this.logout.bind(this);
   }
 
-  renderLoginSignup() {
+  renderLoginSignup(){
     return (
       <li>
         <NavLink to="/entry">Login/Signup</NavLink>
@@ -40,7 +34,6 @@ class Navbar extends React.Component {
   }
 
   logout() {
-
     this
       .props
       .logout()
@@ -54,37 +47,34 @@ class Navbar extends React.Component {
   }
 
   render() {
-return (
-  <nav id="navbar">
-    <ul>
-      <li>
-        <NavLink to="/">Home</NavLink>
-      </li>
-      <li>
-    <NavLink to = "/products" >Products</NavLink>
-      </li>
-<li >
-<NavLink to = "/dashboard" >Dashboard</NavLink>
-</li>
-      <li>
-< NavLink to = "/checkout" >Cart</NavLink>
-</li>
-{
-  this.props.sessions.email
-    ? this.renderLogout()
-    : this.renderLoginSignup()
+    return (
+      <nav id="navbar">
+        <ul>
+          <li>
+            <NavLink to="/">Home</NavLink>
+          </li>
+          <li>
+            <NavLink to="/products">Products</NavLink>
+          </li>
+          <li >
+            <NavLink to="/dashboard">Dashboard</NavLink>
+          </li>
+          <li>
+            < NavLink to="/checkout">Cart</NavLink>
+          </li>
+          {this.props.sessions.email ? this.renderLogout() : this.renderLoginSignup()}
+        </ul>
+      </nav>
+    )
+  }
 }
 
-    </ul>
-  </nav>
-)
-    }
-          } /* ----------------- CONTAINER ------------------ */
-          const mapState =
-              state => state;
-              const mapDispatch = dispatch => ({logout : () => {
-                return dispatch(logout());
-              }
+/* ----------------- CONTAINER ------------------ */
+const mapState = state => state;
+const mapDispatch = dispatch => ({
+  logout: () => {
+    return dispatch(logout());
+  }
 });
 
 export default connect(mapState, mapDispatch)(Navbar);
