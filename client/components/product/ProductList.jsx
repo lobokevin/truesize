@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
-import { connect } from 'react-redux';
+import React, {Component} from 'react';
+import {Link} from 'react-router-dom';
+import {connect} from 'react-redux';
 import ProductListItem from './ProductListItem';
 import styles from '../../styles';
 
@@ -19,20 +19,23 @@ class ProductList extends Component {
   render() {
 
     return (
-    <div className = "container" id = "wrapper" >
+      <div className="container" id="wrapper">
         <div id="main">
-        <ul className="collection container productList">
-             {this.state.productList.map(product => <ProductListItem product={product} key={product.id} />)}
-        </ul>
-      </div>
+          <ul className="collection container productList">
+            {this
+              .state
+              .productList
+              .map(product => <ProductListItem product={product} key={product.id}/>)}
+          </ul>
+        </div>
       </div>
 
     );
-   }
- }
+  }
+}
 
- /* -----------------    CONTAINER     ------------------ */
+/* -----------------    CONTAINER     ------------------ */
 
- const mapState = ({ products }) => ({ products });
- const mapDispatch = { };
- export default connect(mapState, mapDispatch)(ProductList);
+const mapState = ({products}) => ({products});
+const mapDispatch = {};
+export default connect(mapState, mapDispatch)(ProductList);

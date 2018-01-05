@@ -24,6 +24,6 @@ export default function Footer() {
 								<li><a href="#" className="icon fa-github alt"><span className="label">GitHub</span > </a> </li>
 								<li><a href="#" className="icon fa-dribbble alt"><span className="label">Dribbble</span > </a> </li>
 							</ul > </section> <p className= "copyright" >Theme - a tweaked version of 'Stellar' - courtsey of
-<a href = "https://html5up.net" rel="noopener noreferrer"  target = "_blank" > HTML5 UP </a>. Free for commercial use. Sample image from UnTuckit.com</p >
+<a href = "https://html5up.net" rel="noopener noreferrer"  target = "_blank" > HTML5 UP </a>.<br /> Free for personal & commercial use. Sample image from UnTuckit.com</p >
 					</footer >);
 }

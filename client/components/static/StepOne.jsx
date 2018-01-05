@@ -4,119 +4,155 @@ import {connect} from 'react-redux';
 import {updateSizeThunk} from '../../store/products';
 import styles from '../../styles.js'
 
-class StepOne extends React.Component{
+class StepOne extends React.Component {
 
-  constructor(props){
+  constructor(props) {
     super(props);
     this.state = {
-      screenshot: ''
+      screenshot: '',
+      size: ''
     }
 
     this.processSampleImage = this
-    .processSampleImage
-    .bind(this);
+      .processSampleImage
+      .bind(this);
     this.clearState = this
-    .clearState
-    .bind(this);
+      .clearState
+      .bind(this);
 
     this.updateSize = this
-.updateSize
-  .bind(this);
+      .updateSize
+      .bind(this);
   }
 
   renderSampleImage() {
 
-  return (
-    <img
+    return (<img
       onClick={this.processSampleImage}
       width={'105%'}
       height="400"
-      src="/images/sample.jpg" />
-  );
+      src="/images/sample.jpg"/>);
   }
 
-  clearState(){
-    this.setState({screenshot: ''})
+  clearState() {
+    this.setState({screenshot: '', size: ''});
   }
 
   onDrop(files) {
-  let reader = new FileReader();
-  let file = files[0];
-  reader.onloadend = () => {
-    this.setState({files: file, screenshot: reader.result});
-  }
-  reader.readAsDataURL(file)
-  }
-
-  updateSize(){
-this
-  .props
-  .updateSizeThunk('M');
+    let reader = new FileReader();
+    let file = files[0];
+    reader.onloadend = () => {
+      this.setState({files: file, screenshot: reader.result});
+    }
+    reader.readAsDataURL(file)
   }
 
-  upload(){
+  updateSize() {
+    if (this.state.screenshot) {
+      this
+        .props
+        .updateSizeThunk('M');
+      this.setState({size: 'M'});
+    }
+  }
 
-  return (<li> <h3 >
-  . . Or Upload a picture!
-  </h3> <Dropzone style = {
-  styles.dropzone
-}
-onDrop = {
-  this
-    .onDrop
-    .bind(this)
-} > <p>Click here to upload or drop an image of yourself here.</p> </Dropzone>
-        </li >);
-}
+  upload() {
+
+    return (
+      <li>
+        <h3 >
+          . . Or Upload a picture!
+        </h3>
+        <Dropzone
+          style={styles.dropzone}
+          onDrop={this
+          .onDrop
+          .bind(this)}>
+          <p>Click here to upload or drop an image of yourself here.</p>
+        </Dropzone>
+      </li >
+    );
+  }
 
   processSampleImage() {
-  this.setState({screenshot: '/images/sample.jpg'})
+    this.setState({screenshot: '/images/sample.jpg'})
   }
 
-  render(){
-  return (
+  imageHeader() {
+    if (this.state.size) {
+      return (
+        <h3>We have your size listed as {this.state.size}!
+        </h3>
+      );
+    } else if (this.state.screenshot) {
+      return (
+        <h3>Image received!</h3>
+      );
+    } else {
+      return (
+        <h3>Click to use this sample image ..</h3>
+      );
+    }
+  }
 
-    <section id="first" className="main special">
-      <header className="major">
-        <h2>Step One: Find your size</h2>
-      </header>
-      <ul className="features">
+  sizeSuccess() {
+    return (
+      <ul className="actions">
         <li>
-{
-  this.state.screenshot
-? <h3>Image received!</h3> : <h3>Click to use this sample image ..</h3>
-}
-{this.state.screenshot
-    ? null
-    : this.renderSampleImage()}
-
-{this.state.screenshot ?
-        <img ref={(img) => {
-          this.img = img;}}
-          width = {'105%'}
-          height = "400"
-          src={this.state.screenshot} />
-    : null
-}
+          <a className="button special big">We have your size listed as {this.state.size}! - Go to Step 2!
+          </a>
         </li>
-{
-  this.state.screenshot
-? null
-: this.upload()
-}
       </ul>
-      <footer className="major">
-        <ul className="actions">
-          <li>
-            <a className="button" onClick={this.clearState}>Reset Image!</a >
-          </li>
-    <li > <a className="button special" onClick={this.updateSize}>Get Size!</a > </li>
+    );
+  }
 
-        </ul>
-      </footer >
-    </section>
-  );
+  render() {
+    return (
+
+      <section id="first" className="main special">
+        <header className="major">
+          <h2>Step 1: Find your size</h2>
+        </header>
+        <ul className="features">
+          <li>
+            {this.imageHeader()}
+            {this.state.screenshot
+              ? null
+              : this.renderSampleImage()}
+
+            {this.state.screenshot
+              ? <img
+                  ref={(img) => {
+                  this.img = img;
+                }}
+                  width={'105%'}
+                  height="400"
+                  src={this.state.screenshot}/>
+              : null
 }
+          </li>
+          {this.state.screenshot
+            ? null
+            : this.upload()
+}
+        </ul>
+        <footer className="major">
+          <ul className="actions">
+            <li>
+              <a className="button" onClick={this.clearState}>Reset Image Selection</a >
+            </li>
+            {this.state.size
+              ? null
+              : <li>
+                <a className="button special" onClick={this.updateSize}>Process Image!
+                </a>
+              </li>}
+          </ul>
+          {this.state.size && this.sizeSuccess()}
+        </footer >
+      </section>
+    );
+  }
 }
 
 /* -----------------    CONTAINER     ------------------ */

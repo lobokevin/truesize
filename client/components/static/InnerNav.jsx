@@ -5,7 +5,7 @@ export default function InnerNav() {
   return (
   <nav id="nav"> <ul>
   <li>
-    <a href="#intro" className="active"> How & Why to use this?</a>
+    <a href="#intro" className="active"> Begin here: How & Why to use this?</a>
   </li>
   <li>
     <a href="#first">Step 1: Get Size</a>

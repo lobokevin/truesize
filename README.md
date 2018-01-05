@@ -2,13 +2,13 @@
 
 [![NSP Status](https://nodesecurity.io/orgs/kevinlobo/projects/63414c4f-d028-48cd-a8a7-558a35b3aeb9/badge)](https://nodesecurity.io/orgs/kevinlobo/projects/63414c4f-d028-48cd-a8a7-558a35b3aeb9)
 
-An e-Commerce website which uses rudimentary Computer Vision to generate the correct shirt brand/size for you!
+An e-commerce web app which finds shirts which fit you, instead of you searching for them!
 
 ### Functionality
 
 1. oAuth / Signin using Passport.js
 2. Deploying the production ready code & DB through Heroku
-3. Testing using & Continuous Integration using Travis CI
+3. Testing using & Continuous Integration using Circle CI (ongoing)
 
 Additionally, standard CRUD functions for e-commerce apps -
 
@@ -24,6 +24,3 @@ Additionally, standard CRUD functions for e-commerce apps -
 
 PostgreSQL (Sequelize), Node.js (Express.js) & React with Redux, BootStrap 4
 
-### Credits
-
-A rudimentary implementation of [Sizer.me](http://sizer.me) using a JavaScript library [tracking.js](https://trackingjs.com)

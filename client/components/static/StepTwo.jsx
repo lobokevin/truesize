@@ -1,22 +1,17 @@
 import React from 'react';
 import {NavLink} from 'react-router-dom';
 
-export default function StepTwo(){
+export default function StepTwo() {
 
   return (
     <section id="cta" className="main special">
       <header className="major">
-        <h2>Let's shop!</h2>
-        <p>Click here to go to the products page!<br />
-          </p>
+        <h2>Step 2: Let's shop!</h2>
       </header>
       <footer className="major">
         <ul className="actions">
           <li>
-            <a className="button">Get Started</a>
-          </li>
-          <li>
-            <NavLink className="button special" to="/products">Products
+            <NavLink className="button" to="/products">Click here to see shirts just for you!
             </NavLink>
           </li>
         </ul>
@@ -24,4 +19,3 @@ export default function StepTwo(){
     </section >
   );
 }
-
