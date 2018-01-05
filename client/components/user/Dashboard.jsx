@@ -1,8 +1,8 @@
-import React, { Component } from 'react';
-import { connect } from 'react-redux';
+import React, {Component} from 'react';
+import {connect} from 'react-redux';
 import UserProfile from './UserProfile.jsx';
 import OrderList from './OrderList.jsx';
-import { fetchUserOrdersThunkCreator } from '../../store/orders';
+import {fetchUserOrdersThunkCreator} from '../../store/orders';
 
 class Dashboard extends Component {
   constructor(props) {
@@ -10,7 +10,9 @@ class Dashboard extends Component {
   }
 
   componentWillReceiveProps(nextProps, prevProps) {
-    this.props.fetchUserOrdersThunkCreator(nextProps.sessions.id);
+    this
+      .props
+      .fetchUserOrdersThunkCreator(nextProps.sessions.id);
 
   }
 
@@ -18,12 +20,13 @@ class Dashboard extends Component {
     const user = this.props.sessions;
 
     return (
-        <div className = "container" id = "wrapper" > <div id="main">
-        <UserProfile user={user} />
-        <div className="row">
-          <OrderList orders={this.props.orders} />
+      <div className="container" id="wrapper">
+        <div id="main">
+          <UserProfile user={user}/>
+          <div className="row">
+            <OrderList orders={this.props.orders}/>
+          </div>
         </div>
-      </div>
       </div>
     );
   }
@@ -31,8 +34,10 @@ class Dashboard extends Component {
 
 // container
 
-const mapState = ({ sessions }) => ({ sessions });
+const mapState = ({sessions}) => ({sessions});
 
-const mapDispatch = { fetchUserOrdersThunkCreator};
+const mapDispatch = {
+  fetchUserOrdersThunkCreator
+};
 
 export default connect(mapState, mapDispatch)(Dashboard);
