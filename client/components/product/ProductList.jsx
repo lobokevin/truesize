@@ -1,8 +1,6 @@
 import React, {Component} from 'react';
-import {Link} from 'react-router-dom';
 import {connect} from 'react-redux';
 import ProductListItem from './ProductListItem';
-import styles from '../../styles';
 
 /* -----------------    COMPONENT     ------------------ */
 
@@ -13,19 +11,19 @@ class ProductList extends Component {
       productList: this.props.products,
       length: this.props.products.length
     }
-
   }
 
   render() {
 
     return (
       <div className="container" id="wrapper">
+        <div className="row" />
         <div id="main">
-          <ul className="collection container productList">
+          <ul>
             {this
               .state
               .productList
-              .map(product => <ProductListItem product={product} key={product.id}/>)}
+              .map(product => <ProductListItem product={product} key={product.id} />)}
           </ul>
         </div>
       </div>

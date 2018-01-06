@@ -36,8 +36,9 @@ class Entry extends React.Component {
   render() {
     return (
       <div className="container" id="wrapper">
+       <div className="row" />
         <div id="main">
-          <div className="row">
+
             <ul className="features">
               <li>
                 <div className="panel panel-default">
@@ -120,7 +121,7 @@ class Entry extends React.Component {
                 </div>
               </li>
             </ul>
-          </div>
+
         </div>
       </div>
 
