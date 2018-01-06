@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import UserProfile from './UserProfile.jsx';
-import OrderList from './OrderList.jsx';
 import {fetchUserOrdersThunkCreator} from '../../store/orders';
 
 class Dashboard extends Component {
@@ -10,10 +9,7 @@ class Dashboard extends Component {
   }
 
   componentWillReceiveProps(nextProps, prevProps) {
-    this
-      .props
-      .fetchUserOrdersThunkCreator(nextProps.sessions.id);
-
+    this.props.fetchUserOrdersThunkCreator(nextProps.sessions.id);
   }
 
   render() {
@@ -21,18 +17,16 @@ class Dashboard extends Component {
 
     return (
       <div className="container" id="wrapper">
+        <div className="row" />
         <div id="main">
-          <UserProfile user={user}/>
-          <div className="row">
-            <OrderList orders={this.props.orders}/>
-          </div>
+          <UserProfile user={user} />
         </div>
       </div>
     );
   }
 }
 
-// container
+/* -----------------    CONTAINER     ------------------ */
 
 const mapState = ({sessions}) => ({sessions});
 
