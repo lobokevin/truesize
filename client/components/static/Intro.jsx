@@ -10,12 +10,12 @@ export default function Intro() {
               Begin here: How & Why to use this ?
             </h2>
           </header>
-          <p>I love shopping online, but most of the time I end returning 50% clothes
-            because they don't fit me proeprly! Turns out I'm not the only one. Forbes
+          <p>I love shopping online, but most of the time I end returning 50% clothes I
+            buy because they don't fit me properly! Turns out I'm not the only one. Forbes
             states between "25%-40% of merchandise bought online is returned at the expense
             of the retailer!"
           </p>
-          <br />
+          <br/>
           <p>
             So I looked around a bit tried implementing a simple prototype of
             <a
@@ -37,7 +37,7 @@ export default function Intro() {
             </li>
           </ul>
         </div>
-        <img src="/images/shirt.jpg" width="250" height="250" />
+        <img src="/images/shirt.jpg" width="250" height="250"/>
       </div>
     </section>
   );
